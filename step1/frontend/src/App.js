@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Routes1 from './components/Routes1';
+import Routes2 from "./components/Routes2";
 import {
   BrowserRouter,
   Routes,
@@ -14,6 +15,7 @@ function App() {
    <BrowserRouter>
    <Navbar/>
    <Routes1/>
+   <Routes2/>
    <div className="mt-4"></div>
    
    </BrowserRouter>

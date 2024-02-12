@@ -1,5 +1,6 @@
 export default function Task1(){
-    return <>
+    return (<>
     <p>task1</p>
     </>
+    )
 }

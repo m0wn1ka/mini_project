@@ -1,5 +1,6 @@
 import Card from "./Card"
-import Task1 from "./tasks/Task1"
+import Task1 from "./tasks/Task1";
+import { Link } from "react-router-dom";
 export default function Home(){
     return (
         <>
@@ -7,7 +8,9 @@ export default function Home(){
         <div className="row">
             <div className="col-md-4">
                 <Card>
+                    <Link to="/Task1">
                 <Task1/>
+                </Link>
                 </Card>
             </div>
             <div className="col-md-4">
