@@ -2,22 +2,31 @@ import { Link } from "react-router-dom"
 export default function Navbar(){
     return(
         <>
-        <div class="w-100 p-3 container-fluid border rounded">
-  <div class="row">
-    <div class="col-sm-3">
-    <Link to="/">Home</Link>
-    </div>
-    <div class="col-sm-3">
-    <Link to="/Profile">Profile</Link>
-    </div>
-    <div class="col-sm-3">
-    <Link to="/About">About</Link>
-    </div>
-    <div class="col-sm-3">
-    <Link to="/Help">Help</Link>
-    </div>
-  </div>
-</div>
-       </>
+        <nav class="navbar navbar-expand-lg navbar-light bg-primary justify-content-center ">
+        <div class="container-fluid">
+            <ul class="navbar-nav ">
+              <li class="nav-item">
+                <Link to="/" class="nav-link"><p style={{color:"white",fontWeight:"bolder"}}>Home</p></Link>
+              </li>
+            </ul>
+            <ul class="navbar-nav ">
+              <li class="nav-item">
+                <Link to="/Profile" class="nav-link"><p style={{color:"white",fontWeight:"bolder"}}>Profile page</p></Link>
+              </li>
+            </ul>
+            <ul class="navbar-nav ">
+              <li class="nav-item">
+                <Link to="/About" class="nav-link"><p style={{color:"white",fontWeight:"bolder"}}>About</p></Link>
+              </li>
+            </ul>
+            <ul class="navbar-nav ">
+              <li class="nav-item">
+                <Link to="/Help" class="nav-link"><p style={{color:"white",fontWeight:"bolder"}}>Help</p></Link>
+              </li>
+            </ul>
+        </div>
+        
+        </nav>
+        </>
     )
 }

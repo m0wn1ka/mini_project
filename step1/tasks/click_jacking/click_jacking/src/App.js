@@ -3,7 +3,7 @@ import './App.css';
 
 function App() {
   let style1 = {
-    opacity: 0.5000000009,
+    opacity: 0.9000000009,
     position: 'absolute',
     width:"100%",
     height:"100%",
@@ -25,7 +25,7 @@ function App() {
     <div class="container">
     <div class="row center">
         
-        <iframe src="https://radham0wn1ka.github.io/" title="title" style={style1}></iframe>
+        <iframe src="https://m0wn1ka.github.io/" title="title" style={style1}></iframe>
           <p style={style2}> lottery</p>
         
     </div>
