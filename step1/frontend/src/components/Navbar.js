@@ -24,6 +24,16 @@ export default function Navbar(){
                 <Link to="/Help" class="nav-link"><p style={{color:"white",fontWeight:"bolder"}}>Help</p></Link>
               </li>
             </ul>
+            <ul class="navbar-nav ">
+              <li class="nav-item">
+                <Link to="/Register" class="nav-link"><p style={{color:"white",fontWeight:"bolder"}}>Register</p></Link>
+              </li>
+            </ul>
+            <ul class="navbar-nav ">
+              <li class="nav-item">
+                <Link to="/Login" class="nav-link"><p style={{color:"white",fontWeight:"bolder"}}>Login</p></Link>
+              </li>
+            </ul>
         </div>
         
         </nav>
