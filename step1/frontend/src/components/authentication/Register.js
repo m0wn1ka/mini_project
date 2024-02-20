@@ -21,7 +21,9 @@ alert(res);
         e.preventDefault();
         let body={"email":"email2","name":"name2","passowrd":"pass2"}
         body=inputs
-        await axios.post("http://localhost:3001/register",body,{headers})
+        let url1="https://mini-project-backend-xnqj.onrender.com/"
+        let url2="http://localhost:3001/register"
+        await axios.post(url1,body,{headers})
         console.log("submitted ",inputs)
         alert("submitsted")
         
