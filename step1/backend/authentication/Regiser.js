@@ -7,6 +7,10 @@ router.post('/',async(req,res)=>{
         try{
     const objectId = new ObjectId();
     console.log("a new req to register of backed",req.body)
+    let already_exist= await User.findOne({email:req.body.email});
+    if(already_exist!=null){
+        return res.status(205).send("usr already exist")
+    }
     const user1=new  User({_id:objectId,email:req.body.email,name:req.body.name,password:req.body.password})
     await user1.save()
     res.send("hi");

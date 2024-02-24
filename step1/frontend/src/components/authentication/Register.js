@@ -19,13 +19,20 @@ alert(res);
             'Content-Type': 'application/json'
           }
         e.preventDefault();
-        let body={"email":"email2","name":"name2","passowrd":"pass2"}
-        body=inputs
+        
+        let body=inputs
         let url1="https://mini-project-backend-xnqj.onrender.com/register"
         let url2="http://localhost:3001/register"
-        await axios.post(url2,body,{headers})
+        let response=await axios.post(url2,body,{headers})
         console.log("submitted ",inputs)
-        alert("submitsted")
+        console.log(response)
+        if(response.status==205){
+          window.alert("usr alerdy register,please login")
+        }
+        else{
+          window.alert("succsffuly registed")
+          window.location=("http://localhost:3000")
+        }
         
       }
     return (

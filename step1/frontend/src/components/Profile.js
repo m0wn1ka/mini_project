@@ -1,7 +1,6 @@
 export default function Profile(){
-    return (
+    return(
         <>
-        Profile page
-        </>
+        profile page </>
     )
 }
