@@ -26,6 +26,10 @@ alert(res);
         let response=await axios.post(url2,body,{headers})
         console.log("submitted ",inputs)
         console.log(response)
+        if(response.status==201){
+          window.alert("welcom admin");
+          window.location="http://localhost:3000/Admin"
+        }
         if(response.status==205){
           window.alert("give valid details")
         }

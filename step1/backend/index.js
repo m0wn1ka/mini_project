@@ -6,6 +6,7 @@ const port = 3001;
 const cors=require("cors")
 const register=require('./authentication/Regiser')
 const login=require("./authentication/Login")
+const alumini=require("./alumini/Alumini")
 const profile=require("./profile/Profile")
 var bodyParser = require('body-parser');
 app.use(cors())
@@ -13,6 +14,7 @@ app.use(bodyParser.json());
 app.use('/register',register)
 app.use('/login',login)
 app.use("/profile",profile)
+app.use("/alumini",alumini)
 const database_connect=require("./database_connect")
 database_connect.connection()
 

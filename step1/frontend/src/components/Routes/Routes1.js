@@ -6,6 +6,7 @@ import Help from "../Help";
 import About from "../About";
 import Login from '../authentication/Login'
 import Register from "../authentication/Register";
+import Alumini from "../alumini/Alumini"
 import {
     BrowserRouter,
     Routes,
@@ -61,6 +62,16 @@ export default function Routes1(){
                         >
                             
                         </Route>
+                        <Route
+                            exact
+                            path="/Alumini"
+                            element={<Alumini />}
+                        >
+                            
+                        </Route>
+
+
+                        
                     </Routes>
         </>
     )
