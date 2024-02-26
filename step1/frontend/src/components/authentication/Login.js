@@ -1,6 +1,9 @@
 import {useState} from 'react'
 import axios from 'axios'
+import { useSelector, useDispatch } from 'react-redux'
+import { LOGIN_FAIL,LOGIN_SUCCESS,ADMIN_LOGIN } from '../features/auth/AuthSlice'
 export default function Login(){
+  const dispatch = useDispatch()
     let [inputs, setInputs] = useState({});
    async function handleClick() {
         alert('You clicked me!');
@@ -28,16 +31,18 @@ alert(res);
         console.log(response)
         if(response.status==201){
           window.alert("welcom admin");
-          window.location="http://localhost:3000/Admin"
+          dispatch(ADMIN_LOGIN())
+          // window.location="http://localhost:3000/Admin"
         }
         if(response.status==205){
           window.alert("give valid details")
         }
         else{
           window.alert("succsffuly lgoin")
-          console.log("tke",response.data.token)
-          localStorage.setItem("user",response.data.token)
-          window.location=("http://localhost:3000/Profile")
+          dispatch(LOGIN_SUCCESS())
+          // console.log("tke",response.data.token)
+          localStorage.setItem("user",response.data.token) 
+          // window.location=("http://localhost:3000/Profile")
         }
         
       }

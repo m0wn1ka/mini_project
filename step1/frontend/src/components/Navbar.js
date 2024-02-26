@@ -40,6 +40,12 @@ export default function Navbar(){
                 <Link to="/Alumini" class="nav-link"><p style={{color:"white",fontWeight:"bolder"}}>Alumini</p></Link>
               </li>
             </ul>
+
+            <ul class="navbar-nav ">
+              <li class="nav-item">
+                <Link to="/Admin" class="nav-link"><p style={{color:"white",fontWeight:"bolder"}}>Admin</p></Link>
+              </li>
+            </ul>
         </div>
         
         </nav>
