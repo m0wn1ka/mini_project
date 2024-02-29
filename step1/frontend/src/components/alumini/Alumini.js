@@ -1,7 +1,9 @@
 import {useState} from 'react'
 import axios from 'axios'
+import {useSelector} from 'react-redux'
 export default function Alumini(){
-
+    const main_url=useSelector(state=>state.auth.url)
+    let url=main_url+'alumini'
     let [inputs, setInputs] = useState({});
     function addAnotherHandler(event){
         const keyy = document.getElementById("keyy").value
@@ -17,10 +19,9 @@ export default function Alumini(){
         e.preventDefault();
         console.log("inputss",inputs)
         window.alert("u clicked submit");
-        let url1="https://mini-project-backend-xnqj.onrender.com/alumini"
-        let url2="http://localhost:3001/alumini"
+        
         let body=inputs
-        let res=await axios.post(url2,body,headers)
+        let res=await axios.post(url,body,headers)
         console.log("the response after to backed is ",res)
 
     }

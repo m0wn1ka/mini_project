@@ -4,7 +4,9 @@ export const authSlice=createSlice({
     name:'auth',
     initialState:{
         isAuthenticated:false,
-        isAdmin:false
+        isAdmin:false,
+        // url:"http://localhost:3001/"
+        url:"https://mini-project-backend-xnqj.onrender.com/"
         
     },
     reducers:{

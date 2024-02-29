@@ -1,10 +1,17 @@
 import {useState} from 'react'
 import axios from 'axios'
+import {useSelector} from 'react-redux'
+import  {useNavigate}  from 'react-router-dom';
 export default function Register(){
+  const navigate = useNavigate();
+
+  const main_url=useSelector((state)=>state.auth.url)
+  let url=main_url+'register'
     let [inputs, setInputs] = useState({});
    async function handleClick() {
         alert('You clicked me!');
-let res=await axios.get("http://localhost:3001/register")
+
+let res=await axios.get(url)
 res=res.data
 console.log(res)
 alert(res);
@@ -21,9 +28,8 @@ alert(res);
         e.preventDefault();
         
         let body=inputs
-        let url1="https://mini-project-backend-xnqj.onrender.com/register"
-        let url2="http://localhost:3001/register"
-        let response=await axios.post(url2,body,{headers})
+        
+        let response=await axios.post(url,body,{headers})
         console.log("submitted ",inputs)
         console.log(response)
         if(response.status==205){
@@ -31,7 +37,7 @@ alert(res);
         }
         else{
           window.alert("succsffuly registed")
-          window.location=("http://localhost:3000")
+          navigate("/Login")
         }
         
       }

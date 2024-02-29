@@ -9,6 +9,7 @@ import Login from '../authentication/Login'
 import Register from "../authentication/Register";
 import Alumini from "../alumini/Alumini"
 import Counter from '../counter/Counter'
+import { AluminiData } from "../alumini/AluminiData";
 import {
     BrowserRouter,
     Routes,
@@ -95,6 +96,19 @@ export default function Routes1(){
                                 <AdminProtectedRoute>
                             <Admin />
                              </AdminProtectedRoute>
+                        }
+
+                        >
+                            
+                        </Route>
+
+                        <Route
+                            exact
+                            path="/AluminiData"
+                            element={
+                               
+                            <AluminiData />
+                            
                         }
 
                         >

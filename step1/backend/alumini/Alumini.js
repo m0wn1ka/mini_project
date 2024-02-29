@@ -18,4 +18,36 @@ router.post("/",async(req,res)=>{
     }
 
 })
+router.get("/verify",async(req,res)=>{
+    let alumini1=await Alumini.findOne({verified:false})
+    console.log("i am from alumini/verify")
+    console.log(alumini1,typeof(alumini1))
+    if(alumini1!=null){
+    return res.status(202).send(alumini1)
+    }
+    else{
+        return res.status(203).send("all are verifed")
+    }
+})
+router.post("/verify",async(req,res)=>{
+    console.log("verify alumin called with ",req.body)
+    if(req.body.id){
+        let response=await Alumini.findByIdAndUpdate(req.body.id,{verified:req.body.verify})
+        return res.status(200).send("alumini has been updated as per ur directs")
+    }
+    else{
+        return res.status(201).send("cant do anython")
+    }
+})
+router.post('/getAlumini',async(req,res)=>{
+    if(req.body.count){
+        let alumini_data=await Alumini.find({verified:true}).skip(req.body.count).limit(5)
+        console.log("alumini data is ",alumini_data)
+        res.count=0
+        return res.status(200).send(alumini_data)
+    }
+    else{
+        res.status(201).send("try later")
+    }
+})
 module.exports=router

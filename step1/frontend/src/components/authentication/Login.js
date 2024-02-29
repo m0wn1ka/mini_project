@@ -1,13 +1,19 @@
 import {useState} from 'react'
+import { UseSelector } from 'react-redux'
 import axios from 'axios'
+import  {useNavigate}  from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux'
 import { LOGIN_FAIL,LOGIN_SUCCESS,ADMIN_LOGIN } from '../features/auth/AuthSlice'
 export default function Login(){
+  const navigate = useNavigate();
+  const main_url=useSelector((state)=>state.auth.url)
+  let url=main_url+'login'
   const dispatch = useDispatch()
     let [inputs, setInputs] = useState({});
    async function handleClick() {
         alert('You clicked me!');
-let res=await axios.get("http://localhost:3001/login")
+
+let res=await axios.get(url)
 res=res.data
 console.log(res)
 alert(res);
@@ -24,25 +30,26 @@ alert(res);
         e.preventDefault();
         
         let body=inputs
-        let url1="https://mini-project-backend-xnqj.onrender.com/login"
-        let url2="http://localhost:3001/login"
-        let response=await axios.post(url2,body,{headers})
+       
+        let response=await axios.post(url,body,{headers})
         console.log("submitted ",inputs)
         console.log(response)
         if(response.status==201){
           window.alert("welcom admin");
           dispatch(ADMIN_LOGIN())
-          // window.location="http://localhost:3000/Admin"
+          // window.location=url+'Admin'
+          navigate('/Admin')
         }
-        if(response.status==205){
+        else if (response.status==205){
           window.alert("give valid details")
         }
         else{
           window.alert("succsffuly lgoin")
           dispatch(LOGIN_SUCCESS())
+          navigate("/Profile")
           // console.log("tke",response.data.token)
           localStorage.setItem("user",response.data.token) 
-          // window.location=("http://localhost:3000/Profile")
+          // window.location=(url+'Profile')
         }
         
       }
