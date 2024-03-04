@@ -1,11 +1,15 @@
 import {useState} from 'react'
 import axios from 'axios'
-
+import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 export default function Register(){
+  const navigate=useNavigate()
+  const main_url=useSelector((state)=>state.auth.url)
+  let url=main_url+'register'
     let [inputs, setInputs] = useState({});
    async function handleClick() {
         alert('You clicked me!');
-let res=await axios.get("http://localhost:3001/register")
+let res=await axios.get(url)
 res=res.data
 console.log(res)
 alert(res);
@@ -22,11 +26,19 @@ alert(res);
         e.preventDefault();
         let body={"email":"email2","name":"name2","passowrd":"pass2"}
         body=inputs
-        let url1="https://mini-project-backend-xnqj.onrender.com/"
-        let url2="http://localhost:3001/register"
-        await axios.post(url1,body,{headers})
+        // let url1="https://mini-project-backend-xnqj.onrender.com/"
+        // let url2="http://localhost:3001/register"
+        let response=await axios.post(url,body,{headers})
+        if(response.status==205){
+          window.alert("usr alerdy register,please login")
+        }
+        else{
+          window.alert("succsffuly registed")
+          navigate("/Login")
+        }
         console.log("submitted ",inputs)
         alert("submitted")
+        navigate('/Login')
         
       }
       // var form = document.getElementById("form");

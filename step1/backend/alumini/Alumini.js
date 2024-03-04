@@ -7,8 +7,9 @@ router.get("/",(req,res)=>{
 })
 router.post("/",async(req,res)=>{
     if(req.body){
+        // console.log("req body of alumini fillling ",req.body)
         const objectId = new ObjectId();
-        const alumini1=new  Alumini({_id:objectId,data_of_alumini:req.body});
+        const alumini1=new  Alumini({_id:objectId,id_no:req.body.id_no,data_of_alumini:req.body.alumini_data});
         await alumini1.save()
         console.log(req.body)
         return res.status(200).send("got the req from frontend on alumini post req,(i am from alumin backend)")
@@ -40,11 +41,12 @@ router.post("/verify",async(req,res)=>{
     }
 })
 router.post('/getAlumini',async(req,res)=>{
-    if(req.body.count){
+    if(true){
+        console.log("req.body/count is ",req.body.count)
         let alumini_data=await Alumini.find({verified:true}).skip(req.body.count).limit(5)
-        console.log("alumini data is ",alumini_data)
-        res.count=0
-        return res.status(200).send(alumini_data)
+        console.log("alumini data is ",(alumini_data).length)
+        res.count=alumini_data.length
+        return res.status(200).send({"alumini_data":alumini_data,count:alumini_data.length})
     }
     else{
         res.status(201).send("try later")

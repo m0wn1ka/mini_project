@@ -3,6 +3,7 @@ import axios from 'axios'
 import {useSelector} from 'react-redux'
 export default function Alumini(){
     const main_url=useSelector(state=>state.auth.url)
+    let [id_no,setId_no]=useState("n191034");
     let url=main_url+'alumini'
     let [inputs, setInputs] = useState({});
     function addAnotherHandler(event){
@@ -19,8 +20,9 @@ export default function Alumini(){
         e.preventDefault();
         console.log("inputss",inputs)
         window.alert("u clicked submit");
-        
-        let body=inputs
+        console.log("id no is ",id_no)
+        let body={"alumini_data":inputs,"id_no":id_no}
+        console.log("body is ",body)
         let res=await axios.post(url,body,headers)
         console.log("the response after to backed is ",res)
 
@@ -30,6 +32,7 @@ export default function Alumini(){
     alumin page
     <h1>page</h1>
         <form onSubmit={submitHandler}>
+        id no:<input type="text" name="id_no" id="id_no" value={id_no} onChange={e=>setId_no(e.target.value)}/><br/>
             the key:<input type="text" name="the_key" id="keyy"/>
             <br/>
             value:<input type="text" name="the_value" id="valuee"/>

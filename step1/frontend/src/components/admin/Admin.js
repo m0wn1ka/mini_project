@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { UseSelector, useSelector } from 'react-redux'
 
 export default function Admin(){
+    let [id_no,setId_no]=useState("")
     let [alumini_data,setAlumini_data]=useState('')
     let key_of_data=1;
     let main_url=useSelector(state=>state.auth.url)
@@ -11,7 +12,8 @@ export default function Admin(){
    async function fetchAluminiToVerifyHandler(){
     
         res=await axios.get(main_url+'alumini/verify')
-        console.log(res)
+        console.log('res from alumini get verify',res)
+        setId_no(res.data.id_no)
         if(res.status!=203){
         let res_id=res.data._id
        console.log("Res id ",res_id)
@@ -81,6 +83,7 @@ export default function Admin(){
     <form>
         <input type="button"  value="fetch alumin to verify" onClick={fetchAluminiToVerifyHandler}/>
     </form>
+    {id_no}
     {alumini_data}
     <form>
         <input type="button" value="verfiy the alumini" onClick={verfiyAluminiHandler}/>
