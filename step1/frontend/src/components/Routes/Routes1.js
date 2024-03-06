@@ -10,7 +10,7 @@ import Register from "../authentication/Register";
 import Alumini from "../alumini/Alumini"
 import Counter from '../counter/Counter'
 import { AluminiData } from "../alumini/AluminiData";
-import Test from "../alumini/Test";
+
 import {
     BrowserRouter,
     Routes,
@@ -115,13 +115,7 @@ export default function Routes1(){
                         >
                             
                         </Route>
-                        <Route
-                            exact
-                            path="/Test"
-                            element={<Test />}
-                        >
-
-                        </Route>
+                        
 
 
                         
