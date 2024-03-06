@@ -1,14 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit'
-const isProduction = process.env.NODE_ENV === 'production';
-const baseURL = isProduction
-  ? "https://mini-project-backend-xnqj.onrender.com/"
-  : "http://localhost:3001/";
+// const isProduction = process.env.NODE_ENV === 'production';
+// const baseURL = isProduction
+//   ? "https://mini-project-backend-xnqj.onrender.com/"
+//   : "http://localhost:3001/";
 export const authSlice=createSlice({
     name:'auth',
     initialState:{
         isAuthenticated:false,
         isAdmin:false,
-        url:baseURL
+        url:"https://mini-project-backend-xnqj.onrender.com/"
+        // url:"http://localhost:3001/"
         
     },
     reducers:{
