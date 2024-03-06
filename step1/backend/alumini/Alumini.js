@@ -43,7 +43,7 @@ router.post("/verify",async(req,res)=>{
 router.post('/getAlumini',async(req,res)=>{
     if(true){
         console.log("req.body/count is ",req.body.count)
-        let alumini_data=await Alumini.find({verified:true}).skip(req.body.count).limit(5)
+        let alumini_data=await Alumini.find({verified:true}).skip(req.body.count).limit(4)
         console.log("alumini data is ",(alumini_data).length)
         res.count=alumini_data.length
         return res.status(200).send({"alumini_data":alumini_data,count:alumini_data.length})

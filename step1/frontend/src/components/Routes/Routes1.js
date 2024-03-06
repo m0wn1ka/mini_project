@@ -21,7 +21,7 @@ import AdminProtectedRoute from './AdminProtectedRoute'
 import { Provider } from 'react-redux'
 export default function Routes1(){
     return (
-        <>
+        <div className="container-fluid h-100">
         <Routes>
                         <Route
                             exact
@@ -126,6 +126,6 @@ export default function Routes1(){
 
                         
                     </Routes>
-        </>
+                    </div>
     )
 }

@@ -1,30 +1,18 @@
-function Card({ children }) {
+import '../../App.css'
+export default function Test() {
     return (
-      <div className="card">
-        {children}
+      <div className="container-fluid flex-container">
+      <div className="row  flex-grow-1">
+          <div className="col">1</div>
+          <div className="col">2</div>
       </div>
+   
+      <div className="row flex-grow-1">
+          <div className="col">3</div>
+          <div className="col">4</div>
+      </div>
+  </div>
+ 
     );
   }
 
-export default function Test(){
-    
-let a={ name: "radh", branch: "cse", "year of passowut": "2025" }
-    const listItems=Object.keys(a).map(x=>
-        <li>
-            {x}:{a[x]}
-
-        </li>
-        )
-
-
-    return(
-        <>
-        hi
-        <Card>
-        <li>
-            {listItems}
-        </li>
-        </Card>
-        </>
-    )
-    }

@@ -1,21 +1,25 @@
 import axios from 'axios'
+import '../../App.css'
 import { useState } from 'react'
 import {useSelector} from 'react-redux'
 function Person({person_data,id_no}){
+    
     //we get a single persons data as a object 
     const items=Object.keys(person_data).map(attrribute=>
     <>
-    <tr>
-   <td>{attrribute}</td>
-   <td>{person_data[attrribute]}</td>
-   </tr>
+    <div className="row">
+    <div className="col">{attrribute}</div>
+    <div className="col">{person_data[attrribute]}</div>
+   </div>
     </>
+    
     )
+    
     return <>
     <h1>{id_no}</h1>
-    <table>
+    <div className='container '>
         {items}
-    </table>
+    </div>
   
     </>
 }
@@ -29,7 +33,17 @@ function Split_to_persons({persons_data}){
     <Person person_data={item.data_of_alumini} id_no={item.id_no}/>
     </>)
     return <>
-    {items}
+      <div className='container-fluid flex-container '>
+    <div className='row flex-grow-1'> 
+    <div className='col card'>{items[0]}</div>
+    <div className='col card'>{items[1]}</div>
+    </div>
+
+    <div className='row flex-grow-1'> 
+    <div className='col card'>{items[2]}</div>
+    <div className='col card'>{items[3]}</div>
+    </div>
+    </div>
     </>
 
 }
@@ -41,7 +55,7 @@ export function AluminiData(){
     const main_url=useSelector(state=>state.auth.url)
     let url=main_url+'alumini/getAlumini'
     let [alumini_data,setAlumini_data]=useState({})
-    async function get5aluminiHanlder(e){
+    async function get4aluminiHanlder(e){
         let  headers= {
             'Content-Type': 'application/json'
           }
@@ -64,20 +78,26 @@ export function AluminiData(){
 
 if(!have_alumini_data){
     return (
-        <>
+    
+          <div className='container-fluid'>
         this is page where u can find alumini
         <form>
-            <input type="button" value="get the next 5 alumini" onClick={get5aluminiHanlder}/>
+            <input type="button" value="get the next 4 alumini" onClick={get4aluminiHanlder}/>
         </form>
-        </>
+        </div>
+    
     )
 }
 else{
-    return (<>
-<Split_to_persons persons_data={alumini_data}/>
-
+    return (
+    <div className='container-fluid ' >
+    <Split_to_persons persons_data={alumini_data}/>
+        <div className='footer'>
         <form>
-            <input type="button" value="get the next 5 alumini" onClick={get5aluminiHanlder}/>
-        </form></>)
+            <input type="button" value="get the next 4 alumini" onClick={get4aluminiHanlder}/>
+        </form>
+        </div>
+        </div>
+        )
 }
 }

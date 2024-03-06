@@ -55,16 +55,17 @@ alert(res);
       }
     return (
         <>
+        <div class="container d-flex justify-content-center">
+
        <p>login pge</p>
-       <button onClick={handleClick}>
-      Click me
-    </button>
+     
     <form onSubmit={onsubmitHandler}>
         email:<input type="text" name="email" id="email" value={inputs.email} onChange={onchangeHandler}/><br/>
       password:  <input type="text" name="password" id="password" value={inputs.password} onChange={onchangeHandler}/>
       <input type="submit"/>
     </form>
     <p>u typeing {inputs.name}</p>
+    </div>
         </>
     )
 }

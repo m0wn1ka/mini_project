@@ -1,6 +1,11 @@
 .App {
   text-align: center;
 }
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  height: 90vh; /* Ensure full viewport height */
+}
 
 .App-logo {
   height: 40vmin;

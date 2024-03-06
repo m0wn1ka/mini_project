@@ -11,15 +11,15 @@ import {
 } from "react-router-dom";
 function App() {
   return (
-   <>
+    <div className="container-fluid h-100">
    <BrowserRouter>
    <Navbar/>
    <Routes1/>
    <Routes2/>
-   <div className="mt-4"></div>
+   
    
    </BrowserRouter>
-   </>
+ </div>
   );
 }
 
