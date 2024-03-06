@@ -27,11 +27,27 @@ export default function Alumini(){
         console.log("the response after to backed is ",res)
 
     }
+    function suggestionHandler(e){
+        e.preventDefault()
+        let a=e.target.name
+        document.getElementById('keyy').value=a
+        // window.alert(a)
+    }
     return (
     <>
     alumin page
     <h1>page</h1>
+        to ease the serach do use these suggested fields
+    <div className='container'>
+            suggestions:
+            <button name='year' onClick={suggestionHandler}>year of admisson</button>
+            <button name='branch' onClick={suggestionHandler}>branch</button>
+            <button name='compnay_name' onClick={suggestionHandler}>present company name</button>
+            
+        </div>
         <form onSubmit={submitHandler}>
+
+       
         id no:<input type="text" name="id_no" id="id_no" value={id_no} onChange={e=>setId_no(e.target.value)}/><br/>
             the key:<input type="text" name="the_key" id="keyy"/>
             <br/>
