@@ -1,5 +1,6 @@
 import {useState} from 'react'
 import { UseSelector } from 'react-redux'
+import { Link } from 'react-router-dom';
 import axios from 'axios'
 import  {useNavigate}  from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux'
@@ -66,6 +67,7 @@ alert(res);
     </form>
     <p>u typeing {inputs.name}</p>
     </div>
+    {/* <Link to='/admin'>got to amdin if u are admin</Link> */}
         </>
     )
 }

@@ -10,7 +10,7 @@ import Register from "../authentication/Register";
 import Alumini from "../alumini/Alumini"
 import Counter from '../counter/Counter'
 import { AluminiData } from "../alumini/AluminiData";
-
+import Routes2 from "./Routes2";
 import {
     BrowserRouter,
     Routes,
@@ -22,6 +22,7 @@ import { Provider } from 'react-redux'
 export default function Routes1(){
     return (
         <div className="container-fluid h-100">
+           
         <Routes>
                         <Route
                             exact
@@ -30,6 +31,7 @@ export default function Routes1(){
                         >
                             
                         </Route>
+                        
 
                         <Route
                             exact
