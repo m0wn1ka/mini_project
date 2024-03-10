@@ -21,6 +21,7 @@ export default function Admin(){
     let [id_no,setId_no]=useState("")
     let [alumini_data,setAlumini_data]=useState({})
     let key_of_data=1;
+    let admin_cookie=localStorage.getItem("user")
     let [to_be_verified,setTo_be_verified]=useState(false)
     //this variable is for changing the data in the 2nd col
     //when it is true we render persons data to verify
@@ -61,6 +62,7 @@ export default function Admin(){
             let body={}
             body.id=res_id
             body.verify=true
+            body.cookie=admin_cookie
             console.log("verify alumini cale")
             let response=await axios.post(main_url+'alumini/verify',body,{headers})
             if (response.status==200){
@@ -86,6 +88,7 @@ export default function Admin(){
                 let body={}
                 body.id=res_id
                 body.verify=false
+                body.admin_cookie=admin_cookie
                 console.log("verify alumini cale")
                 let response=await axios.post(main_url+'alumini/verify',body,{headers})
                 if (response.status==200){

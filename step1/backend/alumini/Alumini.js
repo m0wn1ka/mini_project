@@ -1,7 +1,10 @@
 const Alumini=require("../models/Alumini")
+const auth_middle_ware=require("../middle_wares/auth_middle_ware")
 const express=require("express")
 const {ObjectId}=require("mongodb")
 const router=express.Router()
+const jwt=require("jsonwebtoken")
+const SECRET=require("../SECRET").SECRET
 router.get("/",(req,res)=>{
     res.send("this is alumini get path")
 })
@@ -30,8 +33,11 @@ router.get("/verify",async(req,res)=>{
         return res.status(203).send("all are verifed")
     }
 })
-router.post("/verify",async(req,res)=>{
-    console.log("verify alumin called with ",req.body)
+router.post("/verify",auth_middle_ware ,async(req,res)=>{
+  if(req.user_mail!='admin'){
+    return res.status(209).send("u are a intruder")
+  }
+    
     if(req.body.id){
         let response=await Alumini.findByIdAndUpdate(req.body.id,{verified:req.body.verify})
         return res.status(200).send("alumini has been updated as per ur directs")

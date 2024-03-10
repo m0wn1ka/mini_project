@@ -37,6 +37,7 @@ alert(res);
         console.log(response)
         if(response.status==201){
           window.alert("welcom admin");
+          localStorage.setItem("user",response.data.token) 
           dispatch(ADMIN_LOGIN())
           // window.location=url+'Admin'
           navigate('/Admin')
@@ -46,10 +47,11 @@ alert(res);
         }
         else{
           window.alert("succsffuly lgoin")
+          localStorage.setItem("user",response.data.token) 
           dispatch(LOGIN_SUCCESS())
           navigate("/Profile")
           // console.log("tke",response.data.token)
-          localStorage.setItem("user",response.data.token) 
+          
           // window.location=(url+'Profile')
         }
         

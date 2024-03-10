@@ -2,7 +2,7 @@ const User=require('../models/User')
 const express=require("express")
 const jwt=require("jsonwebtoken")
 const router=express.Router()
-const SECRET="SECRET1212"
+const SECRET=require("../SECRET").SECRET
 router.post('/',async(req,res)=>{
     if(req.body.email && req.body.password){
         try{
@@ -24,7 +24,6 @@ router.post('/',async(req,res)=>{
         let tok=""
         let cookie_user={email:req.body.email}
         tok=jwt.sign({cookie_user},SECRET,{ expiresIn: '24h' })
-        
         return res.send({"msg":"god logged in","token":tok})
     }
     else{
