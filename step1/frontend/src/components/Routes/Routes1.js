@@ -10,6 +10,7 @@ import Register from "../authentication/Register";
 import Alumini from "../alumini/Alumini"
 import Counter from '../counter/Counter'
 import { AluminiData } from "../alumini/AluminiData";
+import TodoList from "../TodoList/TodoList";
 import Routes2 from "./Routes2";
 import {
     BrowserRouter,
@@ -117,7 +118,17 @@ export default function Routes1(){
                         >
                             
                         </Route>
-                        
+                        <Route
+                            exact
+                            path="/TodoLIst"
+                            element={
+                                <ProtectedRoute>
+                            <TodoList />
+                            </ProtectedRoute>
+                                }
+                        >
+                            
+                        </Route>
 
 
                         

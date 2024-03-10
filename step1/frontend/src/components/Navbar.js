@@ -52,6 +52,12 @@ export default function Navbar(){
                 <Link to="/AluminiData" class="nav-link"><p style={{color:"white",fontWeight:"bolder"}}>see our alumini</p></Link>
               </li>
             </ul>
+
+            <ul class="navbar-nav ">
+              <li class="nav-item">
+                <Link to="/TodoList" class="nav-link"><p style={{color:"white",fontWeight:"bolder"}}>todo list</p></Link>
+              </li>
+            </ul>
         </div>
         
         </nav>
