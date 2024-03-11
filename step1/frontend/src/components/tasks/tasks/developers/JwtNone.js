@@ -33,6 +33,23 @@ export default function JwtNone(){
 
                         </ul>
            </li>
+           <li>
+                <h4>how to acess the lab</h4>
+               
+                    
+                    just run this script
+                    https://hub.docker.com/r/radham0wn1ka1/
+                    <code>
+                    docker pull radham0wn1ka1/jwt_frontend
+                    docker pull radham0wn1ka1/jwt_backend
+                    docker run -dp 127.0.0.1:4003:4003 docker.io/radham0wn1ka1/jwt_backend
+                    docker run -dp 127.0.0.1:3000:3000 docker.io/radham0wn1ka1/jwt_frontend
+                    </code>
+                    <b>making the link as anchor todo</b>
+                <p>if u need a white box u can refer https://github.com/m0wn1ka/mini_project/tree/branch1/step1/tasks/developer/jwt_none</p>
+
+
+           </li>
            
            <center><h3>hints needed to be come out one after another todo </h3></center> 
            <li>  <h4>what is the solution/hints</h4>
