@@ -55,5 +55,23 @@ router.post("/view",auth_middle_ware,async(req,res)=>{
    
 })
 
+
+
+
+router.post("/update",auth_middle_ware,async(req,res)=>{
+   
+    let user_mail=req.user_mail
+    const user1=await  User.findOne({email:user_mail},{password:0})
+    const user_id=user1._id
+    let result=await TodoList.findOne({user_id:user_id})
+    console.log("todo update page req.body.todo",req.body.todo)
+ let resp=await TodoList.findOneAndUpdate({user_id:user_id},{todo:req.body.todo})
+ console.log("resp is ",resp)
+   return  res.send("todo list page post updatereq")
+})
+
+
+
+
 module.exports=router
 

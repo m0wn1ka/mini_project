@@ -34,6 +34,12 @@ export default function TasksHomePage(){
                   <li>
                     <Link to='/tasks/developer/protoTypePollution'>
                     prototype pollution
+                    </Link>
+                    </li>
+
+                    <li>
+                    <Link to='/tasks/developer/jwtNone'>
+                    jwt none
                     </Link></li>
 
             </ol>

@@ -11,11 +11,25 @@ export default function TodoList(){
 function onChangeHandler(e){
     setTask1(e.target.value)
 }
+async function updateTodoHandler(){
+    console.log("upated todo handler",todoData)
+
+    let  headers= {'Content-Type': 'application/json'}
+       let  body={cookie:cookie,todo:todoData}
+       console.log("just before update todo handler body is ",body)
+        let res=await axios.post(main_url+'todoList/update',body=body,headers=headers)
+        console.log("update todo hanlder backend response code is ",res.status)
+}
 async function taskAdderHandler(e){
 e.preventDefault()
 
 setTodoListData([...todoListData,task1])
 setTask1('')
+}
+function checkboxHandler(index) {
+    let updatedTodoData = [...todoData]; // Create a copy of todoData
+    updatedTodoData[index].status = !updatedTodoData[index].status; // Update the status
+    setTodoData(updatedTodoData); // Update the state with the modified data
 }
 
  async function tasksAdderHandler(e){
@@ -36,8 +50,9 @@ setTask1('')
         let  headers= {'Content-Type': 'application/json'}
        let  body={cookie:cookie}
         let res=await axios.post(main_url+'todoList/view',body=body,headers=headers)
-        console.log("res body of todo list is",typeof(res.data))
+        console.log("res body of todo list is",(res.data))
         setTodoData(res.data)
+        console.log("todo daataa is ",todoData)
         if(res.status!=202){
             setHasTodoData(false)
         }
@@ -77,15 +92,16 @@ setTask1('')
        </div>
        {has_todo_data?
        <div>todo data<br/>
-        {todoData.map(item1=>{
+        {todoData.map((item1,index)=>{
             return(
                 <>
-                <input type="checkbox" value={item1.status}/>{item1.task}<br/>
+                {index}
+                <input type="checkbox" value={item1.status} onChange={()=>checkboxHandler(index)}/>{item1.task}<br/>
 
                 </>
             )
         })}
-
+    <input  type='button' onClick={updateTodoHandler} value="update to do"/>
        </div>:<div></div>}
 
        
