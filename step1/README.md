@@ -12,3 +12,4 @@
 - at alumini page ,user can add key value pairs of their data
 - admin can verify by clicking on verify
 - all the verifed data will be seen in see alumini page
+# https://mini-project-5z5u.onrender.com/
