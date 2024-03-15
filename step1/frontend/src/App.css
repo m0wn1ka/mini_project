@@ -1,22 +1,27 @@
 .App {
-  text-align: center;
+
+  /* background-image: url(bg1.jpg); */
+  background-image: linear-gradient(#7703fcfc,#fc03e3);
+  background-size: cover;
+  height: 100vh; 
+}
+body, html {
+  height: 100%; /* Ensure full viewport height */
+  margin: 0; /* Remove default margin */
 }
 .flex-container {
   display: flex;
   flex-direction: column;
-  height: 90vh; /* Ensure full viewport height */
+  height: 100vh; /* Ensure full viewport height */
 }
 
 .flex-container2 {
   display: flex;
   /* flex-direction: column; */
-  height: 90vh; /* Ensure full viewport height */
+  height: 100vh; /* Ensure full viewport height */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

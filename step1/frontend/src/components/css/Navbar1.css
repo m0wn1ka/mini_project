@@ -1,0 +1,18 @@
+.navbar {
+    padding: 20px 10; /* Add padding for better visibility */
+    justify-content: center; 
+  }
+  
+  .navbar-items {
+    list-style-type: none;
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center items horizontally */
+  }
+  
+  .navbar-item {
+    margin: 0 10px; /* Add margin between items */
+    color:rgb(40, 0, 119);
+    font-weight: bold;
+    text-decoration: none;
+  }
+  

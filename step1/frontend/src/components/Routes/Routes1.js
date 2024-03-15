@@ -12,28 +12,28 @@ import Counter from '../counter/Counter'
 import { AluminiData } from "../alumini/AluminiData";
 import TodoList from "../TodoList/TodoList";
 import Routes2 from "./Routes2";
+import Navbar from "../Navbar";
 import {
     BrowserRouter,
     Routes,
     Route
+    ,useLocation
 } from "react-router-dom";
 import ProtectedRoute from "./ProtectedRoute";
+
 import AdminProtectedRoute from './AdminProtectedRoute'
 import { Provider } from 'react-redux'
+import { useEffect, useState } from "react";
 export default function Routes1(){
+    const location = useLocation();
+    const { pathname } = location;
     return (
         <div className="container-fluid h-100">
-           
+     {pathname=="/"?<></>: <Navbar/>}    
+          <br/>
+        
         <Routes>
-                        <Route
-                            exact
-                            path="/"
-                            element={<Home />}
-                        >
-                            
-                        </Route>
                         
-
                         <Route
                             exact
                             path="/About"
