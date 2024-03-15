@@ -11,7 +11,6 @@ export default function Login(){
   let url=main_url+'login'
   const dispatch = useDispatch()
     let [inputs, setInputs] = useState({});
-    const [showPassword, setShowPassword] = useState(false);
    async function handleClick() {
         alert('You clicked me!');
 
@@ -26,19 +25,10 @@ alert(res);
         setInputs(values => ({...values, [name]: value}))
       }
      async function onsubmitHandler(e){
-      {/*let  headers= {
+      let  headers= {
             'Content-Type': 'application/json'
-          }*/}
+          }
         e.preventDefault();
-        if (!inputs.email || !inputs.password) {
-          window.alert('Please enter email and password');
-          return;
-        }
-        
-        let  headers= {
-          'Content-Type': 'application/json'
-        }
-
         
         let body=inputs
        
@@ -66,9 +56,6 @@ alert(res);
         }
         
       }
-      const togglePasswordVisibility = () => {
-        setShowPassword((prevShowPassword) => !prevShowPassword);
-      };
     return (
         <>
         <div class="container d-flex justify-content-center">
@@ -77,16 +64,11 @@ alert(res);
      
     <form onSubmit={onsubmitHandler}>
         email:<input type="text" name="email" id="email" value={inputs.email} onChange={onchangeHandler}/><br/>
-      password:  <input type={showPassword ? "text":"password"} name="password" id="password" value={inputs.password} onChange={onchangeHandler}/>
-      <span
-            className="password-toggle"
-            onClick={togglePasswordVisibility}
-          >jjj</span><br />
+      password:  <input type="text" name="password" id="password" value={inputs.password} onChange={onchangeHandler}/>
       <input type="submit"/>
     </form>
-    <p>you are  typing: {inputs.name}</p>
+    <p>u typeing {inputs.name}</p>
     </div>
     {/* <Link to='/admin'>got to amdin if u are admin</Link> */}
         </>
     )
-}
