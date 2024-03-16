@@ -4,7 +4,7 @@ export default function TasksHomePage(){
         <>
       tasks home page
       <ul>
-        <li>we have three categores </li>
+        <li>we have threcategores </li>
         <ol>
           <ul>
             <li>

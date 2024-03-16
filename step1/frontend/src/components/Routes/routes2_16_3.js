@@ -7,8 +7,7 @@ import Task1 from "../tasks/Task1";
 import TasksHomePage from "../tasks/TasksHomePage";
 import DeveloperRoutes from  './TasksRoutes/DeveloperRoutes'
 export default function Routes2(){
-    return(
-        <div className="container-fluid ">
+    return(<>
     <DeveloperRoutes/>
     <Routes>
                         <Route
@@ -26,8 +25,6 @@ export default function Routes2(){
                             
                         </Route>
                         
-                        
     </Routes>
-    </div>
-    )
+    </>)
 }

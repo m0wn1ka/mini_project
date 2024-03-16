@@ -29,7 +29,7 @@ export default function Routes1(){
     const { pathname } = location;
     return (
         <div className="container-fluid h-100">
-            {pathname=="/"?<></>: <div className=""><Navbar/></div>}  
+            {/* {pathname=="/"?<></>: <div className=""><Navbar/></div>}   */}
       <div className="row h-100">
         <div className="col-sm-2 h-100 bg-dark text-white  d-flex justify-content-left align-items-center">
             <div>
@@ -37,7 +37,7 @@ export default function Routes1(){
           </div>
         </div>
         <div className="col-sm-10 h-100  d-flex-col justify-content-center align-items-center">
-         
+        <Routes2/>
           <Routes>
                         
                         <Route
