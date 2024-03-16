@@ -28,17 +28,17 @@ export default function Routes1(){
     const location = useLocation();
     const { pathname } = location;
     return (
-        <div className="container-fluid h-100">
-            {pathname=="/"?<></>: <div className=""><Navbar/></div>}  
-      <div className="row h-100">
-        <div className="col-sm-2 h-100 bg-dark text-white  d-flex justify-content-left align-items-center">
-            <div>
-          <Vnavbar/>
-          </div>
-        </div>
-        <div className="col-sm-10 h-100  d-flex-col justify-content-center align-items-center">
-         
-          <Routes>
+        <div className="container-fluid h-100 container">
+            <div className="row">
+             {pathname=="/"?<></>: <div className=""><Navbar/></div>}  
+             </div>
+<div className="row">
+    <div className="col-sm-4 h-100">
+     {pathname=="/"?<></>: <div className="h-100"><Vnavbar/></div>}    
+     </div>
+          <br/>
+        <div className="col-sm-8 h-100">
+        <Routes>
                         
                         <Route
                             exact
@@ -139,9 +139,8 @@ export default function Routes1(){
 
                         
                     </Routes>
-        </div>
-
-      </div>
-    </div>
+                    </div>
+                    </div>//row
+                    </div>//contanier
     )
 }
