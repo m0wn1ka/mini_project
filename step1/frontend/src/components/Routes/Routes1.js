@@ -13,6 +13,7 @@ import { AluminiData } from "../alumini/AluminiData";
 import TodoList from "../TodoList/TodoList";
 import Routes2 from "./Routes2";
 import Navbar from "../Navbar";
+import Connect from "../connections/Connect";
 import {
     BrowserRouter,
     Routes,
@@ -44,6 +45,14 @@ export default function Routes1(){
                             exact
                             path="/About"
                             element={<About />}
+                        >
+                            
+                        </Route>
+
+                        <Route
+                            exact
+                            path="/Connect"
+                            element={<Connect />}
                         >
                             
                         </Route>

@@ -33,6 +33,8 @@ export default function Vnavbar(){
        <div><Link to='#'>informative</Link></div>
        </div>:<></>}
 
+       <div><Link to='/Connect'>connect?</Link></div>
+
        
         
         

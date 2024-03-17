@@ -13,3 +13,7 @@
 - admin can verify by clicking on verify
 - all the verifed data will be seen in see alumini page
 # https://mini-project-5z5u.onrender.com/
+
+## feature to be added 16-3-34
+- get the profile of a user based on their mail id
+- follow a profile unfollow a profile

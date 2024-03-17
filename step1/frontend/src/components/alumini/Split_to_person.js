@@ -1,26 +1,4 @@
 import Person from "./Person";
-// function Person({person_data,id_no}){
-    
-//     //we get a single persons data as a object 
-//     const items=Object.keys(person_data).map(attrribute=>
-//     <>
-//     <div className="row">
-//     <div className="col">{attrribute}</div>
-//     <div className="col">{person_data[attrribute]}</div>
-//    </div>
-//     </>
-    
-//     )
-    
-//     return <>
-//     <h1>{id_no}</h1>
-//     <div className='container '>
-//         {items}
-//     </div>
-  
-//     </>
-// }
-
 export default function Split_to_persons({persons_data}){
     //in this fucntion we get data of multiple persons
     // res.data.alumini_data is input 
