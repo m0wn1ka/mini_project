@@ -54,29 +54,43 @@ if(!have_alumini_data){
     
 
     return (
-        <div>
-          <div className='container-fluid'>
-        this is page where u can find alumini
-        <form>
-            <input type="button" value="get the next 4 alumini" onClick={get4aluminiHanlder}/>
-        </form>
-        </div>
-
-        <div>
-             <form >
-             <div className='container'>
-            suggestions:
-            <button name='year' onClick={suggestionHandler}>year of admisson</button>
-            <button name='branch' onClick={suggestionHandler}>branch</button>
-            <button name='compnay_name' onClick={suggestionHandler}>present company name</button>
+        <>
+        <h3>In this page you can find Alumini....</h3><hr />
+        <h4>If you want to get next 4 Alumini, click the button 
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-caret-down-square-fill" viewBox="0 0 16 16" onClick={get4aluminiHanlder} >
+                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm4 4a.5.5 0 0 0-.374.832l4 4.5a.5.5 0 0 0 .748 0l4-4.5A.5.5 0 0 0 12 6z"/>
+            </svg>   
+            </h4>
+            {/*<input type="button" value="Click this one" onClick={get4aluminiHanlder}/>*/}<hr/>
             
-        </div>
-            filter_name <input type="text" name="filter_name" id="keyy"/>   <br/>
+            <h3>Suggestions: </h3><br></br>
+            <button name='year' onClick={suggestionHandler} style={{marginRight:"20px",borderRadius:"20px", border:"none", padding:"10px 20px"}}>Year of admisson</button>
+            <button name='branch' onClick={suggestionHandler} style={{marginRight:"20px",borderRadius:"20px", border:"none", padding:"10px 20px"}}>Branch</button>
+            <button name='compnay_name' onClick={suggestionHandler} style={{marginRight:"20px",borderRadius:"20px", border:"none", padding:"10px 20px"}}>Present Company name</button>
+            
+         <br/><br/>
+            {/*filter_name <input type="text" name="filter_name" id="keyy"/>   <br/>
             filter_value <input type="text" name="filter_value" id="valuee"/><br/>
             <input type="text"  value="add filter" onClick={addFilterHandler}/>
-             </form>   
-        </div>
-    </div>
+            */}  
+            <table cellPadding={5} cellSpacing={5}>
+                <tr>
+                    <th>Filter name:</th>
+                    <td>
+                    <input type="text" name="filter_name" id="keyy"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Filter value:</th>
+                    <td>
+                    <input type="text" name="filter_value" id="valuee"/>
+                    </td>
+                </tr>
+            </table> <br/> 
+            <input type="text"  value="add filter" onClick={addFilterHandler}/>
+       
+    
+    </>
     )
 }
 else{
@@ -85,7 +99,7 @@ else{
     <Split_to_persons persons_data={alumini_data}/>
         <div className='footer'>
         <form>
-            <input type="button" value="get the next 4 alumini" onClick={get4aluminiHanlder}/>
+            <input type="button" value="Get the next 4 alumini" onClick={get4aluminiHanlder}/>
         </form>
         </div>
         </div>
