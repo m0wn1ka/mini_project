@@ -23,22 +23,26 @@ import {
 } from "react-router-dom";
 import ProtectedRoute from "./ProtectedRoute";
 import Vnavbar from "../Vnavbar";
+import AluminiSite from "../AluminiSite/AluminiSite";
 import AdminProtectedRoute from './AdminProtectedRoute'
 import { Provider } from 'react-redux'
 import { useEffect, useState } from "react";
+import '../../App.css'
 export default function Routes1(){
     const location = useLocation();
     const { pathname } = location;
     return (
-        <div className="container-fluid h-100">
+        <div className="container-fluid h-100 w-100 self-no-padding"  >
             {/* {pathname=="/"?<></>: <div className=""><Navbar/></div>}   */}
-      <div className="row h-100">
-        <div className="col-sm-2 h-100 bg-dark text-white  d-flex justify-content-left align-items-center">
-            <div>
-          <Vnavbar/>
-          </div>
+      <div className="container-fluid  h-100 w-100  self-no-padding ">
+        {pathname=='/AluminiSite'?<></>:
+        <div className="col-sm-2 h-100  d-flex justify-content-left align-items-center w-100 self-no-padding">
+            <div className=" h-100  d-flex justify-content-left align-items-center w-100 self-no-padding">
+                <Vnavbar/>
+             </div>
         </div>
-        <div className="col-sm-10 h-100  d-flex-col justify-content-center align-items-center">
+        }
+        <div className="col-sm-10 h-100  d-flex-col justify-content-center align-items-center w-100 self-no-padding">
         <Routes2/>
           <Routes>
                         
@@ -49,6 +53,15 @@ export default function Routes1(){
                         >
                             
                         </Route>
+
+                        <Route
+                            exact
+                            path="/AluminiSite"
+                            element={<AluminiSite />}
+                        >
+                            
+                        </Route>
+
                         <Route
                             exact
                             path="/MessageToAdmin"

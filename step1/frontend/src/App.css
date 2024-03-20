@@ -4,10 +4,16 @@
   background-image: linear-gradient(#7703fcfc,#fc03e3);
   background-size: cover;
   height: 100vh; 
+  padding-right:0;
+  padding-left:0;
+}
+.self-no-padding{
+  padding-right:0;
+  padding-left:0;
 }
 body, html {
   height: 100%; /* Ensure full viewport height */
-  margin: 0; /* Remove default margin */
+margin: 0; 
 }
 .flex-container {
   display: flex;

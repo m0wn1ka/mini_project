@@ -12,7 +12,7 @@ import {
 } from "react-router-dom";
 function App() {
   return (
-    <div className="container-fluid h-100 App"  style={{ height: "100vh" }}>
+    <div className="container-fluid h-100 App "  style={{ height: "100vh" }}>
    <BrowserRouter>
    <Routes>
                   <Route

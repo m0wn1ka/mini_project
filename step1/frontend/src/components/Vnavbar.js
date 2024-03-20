@@ -11,8 +11,9 @@ export default function Vnavbar(){
     let [cookie,setCookie]=useState(localStorage.getItem("user"))
   
    
-    return (<div className=''>
+    return (<div className='bg-dark text-white h-100'>
         <div >
+        <div><Link to='/AluminiSite'>alumini site</Link></div>
         <div><Link to='/'>Home</Link></div>
         <div><Link to='/About'>About</Link></div>
         <div><Link to='/Help'>Help</Link></div>

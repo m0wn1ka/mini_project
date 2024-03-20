@@ -6,6 +6,13 @@ const AluminiSchema = new mongoose.Schema({
         required:true,
         type:String
     },
+    name:{
+        required:true,
+        type:String
+    },
+    image_url:{
+        type:String
+    },
     verified:{type:Boolean,default:false},
     data_of_alumini: {
         type: Object,

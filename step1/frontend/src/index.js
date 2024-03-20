@@ -9,6 +9,7 @@ import store from './components/store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 document.getElementById('root').style.height='100vh'
+document.getElementById('root').className='w-100'
 root.render(
   <React.StrictMode>
       <Provider store={store}>

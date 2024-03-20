@@ -11,8 +11,14 @@ router.get("/",(req,res)=>{
 router.post("/",async(req,res)=>{
     if(req.body){
         // console.log("req body of alumini fillling ",req.body)
+        //find whehter the same data is already there
+        let alumini_exists=await Alumini.findOne({id_no:req.body.id_no});
+        console.log("alumii existss res is ",alumini_exists)
+        if(alumini_exists!=null){
+            return res.status(299).send("already data has been filled for this id ")
+        }
         const objectId = new ObjectId();
-        const alumini1=new  Alumini({_id:objectId,id_no:req.body.id_no,data_of_alumini:req.body.alumini_data});
+        const alumini1=new  Alumini({_id:objectId,id_no:req.body.id_no,name:req.body.name,image_url:req.body.image_url,data_of_alumini:req.body.alumini_data});
         await alumini1.save()
         console.log(req.body)
         return res.status(200).send("got the req from frontend on alumini post req,(i am from alumin backend)")

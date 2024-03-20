@@ -1,0 +1,13 @@
+.flex-container {
+    display: flex;
+    flex-direction: row;
+  }
+.self-image-bg{
+  background-image: url('https://rguktn.ac.in/assets_new/gallery/c.jpg');
+  background-size: cover;
+  height: 100vh; 
+}
+.self-full-height{
+  height: 100vh;
+  
+}
