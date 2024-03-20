@@ -19,7 +19,8 @@ app.use("/alumini",alumini)
 app.use("/todoList",todoList)
 const database_connect=require("./database_connect")
 database_connect.connection()
-
+let MsgToAdmin=require('./profile/MsgToAdmin')
+app.get('/MsgToAdmin',MsgToAdmin)
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });

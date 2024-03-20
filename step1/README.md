@@ -17,3 +17,9 @@
 ## feature to be added 16-3-34
 - get the profile of a user based on their mail id
 - follow a profile unfollow a profile
+## feature to be added 17-3-24
+- msg to admin
+- fronend a page ,add to route,to vnavbar
+- backend save it as msgs to admin
+- new model with date,msgs[user_mail:msg]
+- fetch based on date

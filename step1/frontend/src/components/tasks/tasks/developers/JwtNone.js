@@ -39,12 +39,12 @@ export default function JwtNone(){
                     
                     just run this script
                     https://hub.docker.com/r/radham0wn1ka1/
-                    <code>
+                    <pre>
                     docker pull radham0wn1ka1/jwt_frontend
                     docker pull radham0wn1ka1/jwt_backend
                     docker run -dp 127.0.0.1:4003:4003 docker.io/radham0wn1ka1/jwt_backend
                     docker run -dp 127.0.0.1:3000:3000 docker.io/radham0wn1ka1/jwt_frontend
-                    </code>
+                    </pre>
                     <b>making the link as anchor todo</b>
                 <p>if u need a white box u can refer https://github.com/m0wn1ka/mini_project/tree/branch1/step1/tasks/developer/jwt_none</p>
 

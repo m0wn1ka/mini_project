@@ -1,10 +1,16 @@
 import { NavLink,Link } from "react-router-dom"
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import { useSelector, useDispatch } from 'react-redux'
+
 export default function Vnavbar(){
+
     let [authVisible,setAuthVisible]=useState(false)
     let [aluminiVisible,setAluminiVisible]=useState(false)
     let [tasksVisible,setTasksVisible]=useState(false)
     let [visibility,setVisibility]=useState(false)
+    let [cookie,setCookie]=useState(localStorage.getItem("user"))
+  
+   
     return (<div className=''>
         <div >
         <div><Link to='/'>Home</Link></div>
@@ -32,8 +38,9 @@ export default function Vnavbar(){
        <div><Link to='#'>kids</Link></div>
        <div><Link to='#'>informative</Link></div>
        </div>:<></>}
-
+    
        <div><Link to='/Connect'>connect?</Link></div>
+       <div><Link to='/MessageToAdmin'>messageToAdmin?</Link></div>
 
        
         

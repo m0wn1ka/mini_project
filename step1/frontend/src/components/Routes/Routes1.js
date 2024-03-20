@@ -4,6 +4,7 @@ import Home from "../Home";
 import Admin from   '../admin/Admin'
 import Profile from "../Profile";
 import Help from "../Help";
+import MessageToAdmin from "../admin/MessageToAdmin";
 import About from "../About";
 import Login from '../authentication/Login'
 import Register from "../authentication/Register";
@@ -45,6 +46,17 @@ export default function Routes1(){
                             exact
                             path="/About"
                             element={<About />}
+                        >
+                            
+                        </Route>
+                        <Route
+                            exact
+                            path="/MessageToAdmin"
+                            element={
+                                <ProtectedRoute>
+                            <MessageToAdmin />
+                            </ProtectedRoute>
+                            }
                         >
                             
                         </Route>

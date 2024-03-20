@@ -12,7 +12,7 @@ export default function Profile(){
         let  headers= {'Content-Type': 'application/json'}
        let  body={cookie:cookie}
         let res=await axios.post(main_url+'profile',body=body,headers=headers)
-        console.log("res body of profile is",res.data.user1)
+        // console.log("res body of profile is",res.data.user1)
         setProfileData({
             "name":res.data.user1.name,
             "email":res.data.user1.email
