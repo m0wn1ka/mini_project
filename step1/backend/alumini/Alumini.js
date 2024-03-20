@@ -67,4 +67,17 @@ router.post('/getAlumini',async(req,res)=>{
         res.status(201).send("try later")
     }
 })
+
+
+
+router.post('/get2Alumini',async(req,res)=>{
+  try{
+        let alumini_data=await Alumini.find({verified:true}).limit(2)
+        return res.status(200).send({"alumini_data":alumini_data})
+  }
+  catch(err){
+    return res.status(299).send("err in fetching data")
+  } 
+   
+})
 module.exports=router

@@ -6,7 +6,7 @@ export default function Split_to_persons({persons_data}){
     //for each element we call/render person with .data_of_alumini property
     let items;
      items=persons_data.map(item=><>
-    <Person person_data={item.data_of_alumini} id_no={item.id_no}/>
+    <Person person_data={item.data_of_alumini} id_no={item.id_no} name={item.name} image_url={item.image_url}/>
     </>)
     return <>
       <div className='container-fluid flex-container '>

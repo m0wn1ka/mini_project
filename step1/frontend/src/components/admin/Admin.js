@@ -19,6 +19,8 @@ function Message(){
 }
 export default function Admin(){
     let [id_no,setId_no]=useState("")
+    let [name,setName]=useState("")
+    let [image_url,setImage_url]=useState("")
     let [alumini_data,setAlumini_data]=useState({})
     let key_of_data=1;
     let admin_cookie=localStorage.getItem("user")
@@ -30,18 +32,17 @@ export default function Admin(){
     let res=''
     let [res_id,setRes_id]=useState("")
    async function fetchAluminiToVerifyHandler(){
-    
         res=await axios.get(main_url+'alumini/verify')
         console.log('res from alumini get verify',res)
         setId_no(res.data.id_no)
         if(res.status!=203){
+            console.log("res of getting data from backed to verification is ",res.data.id_no,res.data.name,res.data.image_url,res.data.data_of_alumini)
         let res_id=res.data._id
-       console.log("Res id ",res_id)
-        res=res.data.data_of_alumini
         setRes_id(res_id)
-        // res=JSON.stringify(res)
-        // console.log(res,typeof(res.data))
-        setAlumini_data(res)
+        setAlumini_data(res.data.data_of_alumini)
+        setId_no(res.data.id_no)
+        setName(res.data.name)
+        setImage_url(res.data.image_url)
         setTo_be_verified(true)
         }
         else{
@@ -49,8 +50,6 @@ export default function Admin(){
             window.alert("all are verified")
             setAlumini_data("all are verified")
         }
-       
-    
     }
     async function verfiyAluminiHandler(e){
         console.log("verify called",res_id)
@@ -61,7 +60,7 @@ export default function Admin(){
             e.preventDefault();
             let body={}
             body.id=res_id
-            body.verify=true
+            body.verify='true'
             body.cookie=admin_cookie
             console.log("verify alumini cale")
             let response=await axios.post(main_url+'alumini/verify',body,{headers})
@@ -87,7 +86,7 @@ export default function Admin(){
                 e.preventDefault();
                 let body={}
                 body.id=res_id
-                body.verify=false
+                body.verify='deverified'
                 body.admin_cookie=admin_cookie
                 console.log("verify alumini cale")
                 let response=await axios.post(main_url+'alumini/verify',body,{headers})
@@ -126,8 +125,8 @@ export default function Admin(){
     <div className='col flex-grow-1 card flex-container2'>
    
     {/* {alumini_data} */}
-    
-    {to_be_verified?<Person id_no={id_no} person_data={alumini_data}/>:<Message/>}
+    {to_be_verified?<Person id_no={id_no} name={name} image_url={image_url} alumini_data={alumini_data}/>:<Message/>}   
+    {/* {to_be_verified?<Person id_no={id_no} person_data={alumini_data}/>:<Message/>} */}
     </div>
     </div>
     </div>

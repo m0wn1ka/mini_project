@@ -3,6 +3,7 @@ import '../../App.css'
 import './AluminiSite.css'
 import '../alumini/Alumini'
 import Alumini from "../alumini/Alumini"
+import Get_2_alumini from "../alumini/Get_2_alumini"
 export default function AluminiSite(){
     return(<div className="bg-light h-100 w-100 self-no-padding">
         <div className="self-full-height h-100">
@@ -34,10 +35,19 @@ export default function AluminiSite(){
         </div>
         <div className="self-full-height bg-light d-flex justify-content-center align-items-center h-100">
             a block about rgukt alumini
+           
+
         </div>
         <div className="self-full-height bg-dark text-secondary">
 
-<Alumini/>
+            <Alumini/>
+            {/* a form to be filled by alumini */}
+
+        </div>
+
+        <div className="self-full-height bg-light d-flex justify-content-center align-items-center h-100">
+        
+            <Get_2_alumini/>
 
         </div>
          </div>)
