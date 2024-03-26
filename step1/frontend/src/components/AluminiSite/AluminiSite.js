@@ -6,7 +6,7 @@ import Alumini from "../alumini/Alumini"
 import Get_2_alumini from "../alumini/Get_2_alumini"
 export default function AluminiSite(){
     return(<div className="bg-light h-100 w-100 self-no-padding">
-        <div className="self-full-height h-100">
+        <div className="self-full-height h-100 self-no-padding">
                             <nav class="navbar navbar-expand-lg bg-secondary">
                                 <div class="container-fluid">
                             <div className="row container-fluid">

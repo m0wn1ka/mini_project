@@ -19,16 +19,16 @@ export default function Navbar(){
                 <Link to="/About" class="nav-link"><p style={{color:"white",fontWeight:"bolder"}}>About</p></Link>
               </li>
             </ul>
-            <ul class="navbar-nav ">
+            {/* <ul class="navbar-nav ">
               <li class="nav-item">
                 <Link to="/Help" class="nav-link"><p style={{color:"white",fontWeight:"bolder"}}>Help</p></Link>
               </li>
-            </ul>
-            <ul class="navbar-nav ">
+            </ul> */}
+            {/* <ul class="navbar-nav ">
               <li class="nav-item">
                 <Link to="/Register" class="nav-link"><p style={{color:"white",fontWeight:"bolder"}}>Register</p></Link>
               </li>
-            </ul>
+            </ul> */}
             <ul class="navbar-nav ">
               <li class="nav-item">
                 <Link to="/Login" class="nav-link"><p style={{color:"white",fontWeight:"bolder"}}>Login</p></Link>
@@ -41,21 +41,21 @@ export default function Navbar(){
               </li>
             </ul>
 
-            <ul class="navbar-nav ">
+            {/* <ul class="navbar-nav ">
               <li class="nav-item">
                 <Link to="/Admin" class="nav-link"><p style={{color:"white",fontWeight:"bolder"}}>Admin</p></Link>
               </li>
-            </ul>
+            </ul> */}
 
-            <ul class="navbar-nav ">
+            {/* <ul class="navbar-nav ">
               <li class="nav-item">
                 <Link to="/AluminiData" class="nav-link"><p style={{color:"white",fontWeight:"bolder"}}>see our alumini</p></Link>
               </li>
-            </ul>
+            </ul> */}
 
             <ul class="navbar-nav ">
               <li class="nav-item">
-                <Link to="/TodoList" class="nav-link"><p style={{color:"white",fontWeight:"bolder"}}>todo list</p></Link>
+                <Link to="/AluminiSIte" class="nav-link"><p style={{color:"white",fontWeight:"bolder"}}>alumini site</p></Link>
               </li>
             </ul>
         </div>

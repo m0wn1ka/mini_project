@@ -32,19 +32,24 @@ export default function Routes1(){
     const location = useLocation();
     const { pathname } = location;
     return (
-        <div className="container-fluid h-100 w-100 self-no-padding"  >
-            {/* {pathname=="/"?<></>: <div className=""><Navbar/></div>}   */}
-      <div className="container-fluid  h-100 w-100  self-no-padding ">
-        {pathname=='/AluminiSite'?<></>:
-        <div className="col-sm-2 h-100  d-flex justify-content-left align-items-center w-100 self-no-padding">
-            <div className=" h-100  d-flex justify-content-left align-items-center w-100 self-no-padding">
-                <Vnavbar/>
-             </div>
-        </div>
-        }
-        <div className="col-sm-10 h-100  d-flex-col justify-content-center align-items-center w-100 self-no-padding">
-        <Routes2/>
+        <div className="container-fluid w-100 self-no-padding routes d-flex flex-column" style={{ height: "100vh" }}  >
+            
+        {pathname!='/AluminiSIte'?<Navbar/>:<></>}
+           
+         
+          
+            <div className=" row  w-100 self-no-padding d-flex innerRoutes  justify-content-center" style={{ height: "100vh" }} >
+           
+  
+     <Routes2/>
           <Routes>
+          <Route
+                            exact
+                            path="/"
+                            element={<Home />}
+                        >
+                            
+                        </Route>
                         
                         <Route
                             exact
@@ -174,8 +179,9 @@ export default function Routes1(){
                         
                     </Routes>
         </div>
+      
 
-      </div>
-    </div>
+   </div>
+   
     )
 }

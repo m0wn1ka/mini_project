@@ -11,13 +11,14 @@ export default function Vnavbar(){
     let [cookie,setCookie]=useState(localStorage.getItem("user"))
   
    
-    return (<div className='bg-dark text-white h-100'>
-        <div >
+    return (<div className='bg-dark text-white h-100 d-flex flex-row '>
+        <div className="d-flex flex-row">
         <div><Link to='/AluminiSite'>alumini site</Link></div>
         <div><Link to='/'>Home</Link></div>
         <div><Link to='/About'>About</Link></div>
         <div><Link to='/Help'>Help</Link></div>
         <div><Link to='/Profile'>Profile</Link></div>
+
        <div onClick={()=>{setAuthVisible(x=>!x);setAluminiVisible(false);setTasksVisible(false)}}>auth</div>
        </div>
        {authVisible?<div >
@@ -41,7 +42,8 @@ export default function Vnavbar(){
        </div>:<></>}
     
        <div><Link to='/Connect'>connect?</Link></div>
-       <div><Link to='/MessageToAdmin'>messageToAdmin?</Link></div>
+       <div><Link to='/MessageToAdmin'>messageToAdmin?</Link>
+       </div>
 
        
         

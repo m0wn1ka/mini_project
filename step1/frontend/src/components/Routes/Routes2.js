@@ -8,8 +8,7 @@ import TasksHomePage from "../tasks/TasksHomePage";
 import DeveloperRoutes from  './TasksRoutes/DeveloperRoutes'
 export default function Routes2(){
     return(
-        <div className="container-fluid ">
-    <DeveloperRoutes/>
+     
     <Routes>
                         <Route
                             exact
@@ -28,6 +27,6 @@ export default function Routes2(){
                         
                         
     </Routes>
-    </div>
+
     )
 }

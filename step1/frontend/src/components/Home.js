@@ -5,22 +5,11 @@ import './css/Navbar1.css'
 import './css/Home.css'
 export default function Home(){
     return (
-        <div className="container-fluid center">
-        <center>
-    <div className="navbar">
-        <ul className="navbar-items">
-            <li className="navbar-item"><Link to='/' className="navbar-item">HOME</Link></li>
-            <li className="navbar-item"><Link to='/About' className="navbar-item">Dashboard</Link></li>
-        
-        </ul>
-    </div>
-    </center>
-            <div className="container-fluid center">
+        <div className="d-flex home   justify-content-center align-items-center"  >
+<div className="d-flex justify-content-center ">
             HI THERE<br/>WELCOME TO OUR MINI PROJECT...
-            </div>
-            <div className="container-fluid center">
-            let us dive in
-            </div>
+            </div>        
+          
     </div>
     )
 }
