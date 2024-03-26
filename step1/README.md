@@ -23,3 +23,5 @@
 - backend save it as msgs to admin
 - new model with date,msgs[user_mail:msg]
 - fetch based on date
+## alumini data
+- http://localhost:3000/AluminiData make this page look more good

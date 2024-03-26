@@ -10,7 +10,7 @@ import Login from '../authentication/Login'
 import Register from "../authentication/Register";
 import Alumini from "../alumini/Alumini"
 import Counter from '../counter/Counter'
-import { AluminiData } from "../alumini/AluminiData";
+import  AluminiData  from "../alumini/AluminiData";
 import TodoList from "../TodoList/TodoList";
 import Routes2 from "./Routes2";
 import Navbar from "../Navbar";

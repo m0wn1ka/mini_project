@@ -47,11 +47,11 @@ export default function Navbar(){
               </li>
             </ul> */}
 
-            {/* <ul class="navbar-nav ">
+            <ul class="navbar-nav ">
               <li class="nav-item">
                 <Link to="/AluminiData" class="nav-link"><p style={{color:"white",fontWeight:"bolder"}}>see our alumini</p></Link>
               </li>
-            </ul> */}
+            </ul>
 
             <ul class="navbar-nav ">
               <li class="nav-item">
