@@ -29,7 +29,7 @@ export default function AluminiData() {
                 col2 we have data here
                 <div className="row">
                     {hasAluminiData && alumini_data.map(p1 =>
-                        <div key={p1.id} className='col-4 '>
+                        <div key={p1.id} className='col-3 '>
                             <Person name={p1.name} id_no={p1.id_no} image_url={p1.image_url} alumini_data={p1.data_of_alumini} min_height='calc(100vh/4)'/>
                         </div>
                     )}

@@ -12,7 +12,7 @@ export default function Person({name,id_no,image_url,alumini_data,min_height}){
     )
    })
    
-   return( <div className='border border-secondary rounded d-flex justify-content-center align-items-center flex-column overflow-auto bg-secondary bg-gradient w-100 person' style={{minHeight: {min_height}}}>
+   return( <div className='border border-secondary rounded d-flex justify-content-center align-items-center flex-column overflow-auto bg-secondary bg-gradient w-100 person h-100' style={{minHeight: min_height}}>
          
     <div className="d-flex-col justify-content-center">
     name:{name}<br/>{min_height}
