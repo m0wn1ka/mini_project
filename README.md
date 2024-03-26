@@ -1,7 +1,4 @@
-# mini_project
-e3s2 edited by radham0wn1ka
-edited by m0wn1ka
-edited at 6th afternnon by radha
-
-again edited by radha at 2pm
-
+###  step1/frontend/src/components/aluminisite/alumisite.js
+- need to add more suggested files
+- such as campus ,salary,linkdin account..
+- need to change only this ,no need to do anything with backend
