@@ -5,8 +5,8 @@ export const authSlice=createSlice({
     initialState:{
         isAuthenticated:false,
         isAdmin:false,
-        // url:"https://mini-project-backend-xnqj.onrender.com/"
-        url:"http://localhost:3001/"
+        url:"https://mini-project-backend-xnqj.onrender.com/"
+        // url:"http://localhost:3001/"
         
     },
     reducers:{
@@ -14,7 +14,7 @@ export const authSlice=createSlice({
         LOGIN_SUCCESS:(state)=>{
             state.isAuthenticated=true
             localStorage.setItem("login","truee")
-          
+        //   
             
         },
         LOGIN_FAIL:(state)=>{
