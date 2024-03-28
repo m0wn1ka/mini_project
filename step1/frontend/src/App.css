@@ -1,8 +1,8 @@
 .App {
 
   /* background-image: url(bg1.jpg); */
-  background-image: linear-gradient(#7703fcfc,#fc03e3);
-  background-size: cover;
+  /* background-image: linear-gradient(#7703fcfc,#fc03e3);
+  background-size: cover; */
   height: 100vh; 
   padding-right:0;
   padding-left:0;

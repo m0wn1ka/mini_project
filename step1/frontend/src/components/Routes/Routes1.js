@@ -163,6 +163,21 @@ export default function Routes1(){
                         >
                             
                         </Route>
+
+
+                        <Route
+                            exact
+                            path="/AluminiSIte/AluminiData"
+                            element={
+                               
+                            <AluminiData />
+                            
+                        }
+
+                        >
+                            
+                        </Route>
+
                         <Route
                             exact
                             path="/TodoLIst"

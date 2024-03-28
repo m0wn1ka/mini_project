@@ -42,7 +42,7 @@ export default function Login(){
           window.alert("welcom admin");
           localStorage.setItem("user",response.data.token) 
           dispatch(ADMIN_LOGIN())
-          // window.location=url+'Admin'
+      
           navigate('/Admin')
         }
         else if (response.status==205){
@@ -53,9 +53,7 @@ export default function Login(){
           localStorage.setItem("user",response.data.token) 
           dispatch(LOGIN_SUCCESS())
           navigate("/Profile")
-          // console.log("tke",response.data.token)
-          
-          // window.location=(url+'Profile')
+
         }
         
       }
@@ -71,13 +69,7 @@ export default function Login(){
        
      
     <form onSubmit={onsubmitHandler}>
-        {/*email:<input type="text" name="email" id="email" value={inputs.email} onChange={onchangeHandler}/><br/>
-      password:  <input type={showPassword ? "text":"password"} name="password" id="password" value={inputs.password} onChange={onchangeHandler}/>
-      <span
-            className="password-toggle"
-            onClick={togglePasswordVisibility}
-          >jjj</span><br />
-    <input type="submit"/>*/}
+      
         <table cellPadding={15} cellSpacing={15}>
           <tr>
           <td>
@@ -108,14 +100,13 @@ export default function Login(){
           </tr>
         </table>
         
+        <Link to='/Register'>not registerd?</Link><br/>
         <input type="submit" value="Submit"  style={{borderRadius:"20px", border:"none", padding:"10px 20px", cursor:"pointer"}}/>
+      
     </form>
     </center>
     <span className="password-toggle" onClick={togglePasswordVisibility}>jjj</span>
-    <p>you are  typing: {inputs.name}</p>
-    {/*</div>*/}
-
-    {/* <Link to='/admin'>got to amdin if u are admin</Link> */}
+ 
         </>
     )
 }

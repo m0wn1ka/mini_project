@@ -40,7 +40,7 @@ else{
                 <Person name={p1.name} id_no={p1.id_no} image_url={p1.image_url} alumini_data={p1.data_of_alumini} min_height='calc(100vh/2)'/>    
             </div>)}
             <div className=' col col-4 d-flex border border-secondary rounded d-flex overflow-auto   bg-secondary bg-gradient justify-content-center align-items-center'>
-                 <Link to='#'>
+                 <Link to='/AluminiSIte/AluminiData' className='text-dark fs-3'>
                   see more of them?</Link>
             </div>
     </div>)

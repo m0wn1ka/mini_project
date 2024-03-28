@@ -72,11 +72,26 @@ router.post("/verify",auth_middle_ware ,async(req,res)=>{
 
 
 router.post('/getAlumini',async(req,res)=>{
+    console.log("get alumini function")
     if(true){
         console.log(req.body)
         
         console.log("filters are from alumijjni ",req.body.filters)
         let alumini_data=await Alumini.find()
+        
+        return res.status(200).send({"alumini_data":alumini_data})
+    }
+ 
+})
+
+router.post('/getAluminiFiltered',async(req,res)=>{
+    if(true){
+        console.log("get alumini filtered",req.body)
+        req.body.data_of_alumini.verified="true"
+        console.log("filters are from alumijjni ",req.body.data_of_alumini)
+        // let alumini_data=await Alumini.find({"data_of_alumini.key1":"val1"})
+        let alumini_data=await Alumini.find(req.body.data_of_alumini)
+        console.log("alumini res ",alumini_data)
         
         return res.status(200).send({"alumini_data":alumini_data})
     }

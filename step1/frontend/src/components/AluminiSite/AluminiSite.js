@@ -5,7 +5,7 @@ import '../alumini/Alumini'
 import Alumini from "../alumini/Alumini"
 import Get_2_alumini from "../alumini/Get_2_alumini"
 export default function AluminiSite(){
-    return(<div className="bg-light h-100 w-100 self-no-padding">
+    return(<div className="bg-light h-100 w-100 self-no-padding aluminisite">
         <div className="self-full-height h-100 self-no-padding">
                             <nav class="navbar navbar-expand-lg bg-secondary">
                                 <div class="container-fluid">
