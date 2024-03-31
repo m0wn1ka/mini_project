@@ -9,6 +9,7 @@ import store from './components/store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 document.getElementById('root').style.height='100vh'
+document.getElementById('root').style.fontFamily='Times New Roman'
 document.getElementById('root').className='w-100 index'
 root.render(
   <React.StrictMode>
