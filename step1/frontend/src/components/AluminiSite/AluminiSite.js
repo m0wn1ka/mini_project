@@ -7,7 +7,7 @@ import Get_2_alumini from "../alumini/Get_2_alumini"
 export default function AluminiSite(){
     return(<div className="bg-light h-100 w-100 self-no-padding aluminisite">
         <div className="self-full-height h-100 self-no-padding">
-                            <nav class="navbar navbar-expand-lg bg-secondary">
+                            <nav class="navbar navbar-expand-lg bg-white text-dark">
                                 <div class="container-fluid">
                             <div className="row container-fluid">
                                 <div className="col-8 container-fluid d-flex justify-content-center"><Link to='https://www.rgukt.in/'><p className="text-dark">RGUKT IIIT |Alumini</p></Link></div>
@@ -38,15 +38,20 @@ export default function AluminiSite(){
            
 
         </div>
-        <div className="self-full-height bg-dark text-secondary">
-
+        <div className="self-full-height  row"  >
+            <div className="col-4 d-flex h-100 align-items-center ">
+                <img src="./alumini_image.webp" className="img-fluid h-50 "/>
+            </div>
+            <div className="col-8"  data-aos="flip-right">
             <Alumini/>
+            </div>
+           
             {/* a form to be filled by alumini */}
 
         </div>
 
-        <div className="self-full-height bg-light d-flex justify-content-center align-items-center h-100">
-        
+        <div className="self-full-height bg-light d-flex justify-content-center align-items-center h-100" data-aos="zoom-in" >
+               
             <Get_2_alumini/>
 
         </div>

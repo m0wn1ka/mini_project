@@ -45,7 +45,7 @@ export default function Alumini(){
         // window.alert(a)
     }
     return (
-    <>
+    <div data-aos="fade up bg-dark text-secondary" >
     
     <center><h1>Alumini form</h1></center><hr />
         <h3>To ease the search  use these suggested fields:</h3>
@@ -98,5 +98,5 @@ export default function Alumini(){
             The admin will look into the provided data and once admin validates them they will be displayed(for authenticity this featerue is added)
         </p>
 
-    </>)
+    </div>)
 }

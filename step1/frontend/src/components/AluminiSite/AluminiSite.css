@@ -3,9 +3,14 @@
     flex-direction: row;
   }
 .self-image-bg{
-  background-image: url('https://rguktn.ac.in/assets_new/gallery/c.jpg');
+  background-image: url('./alumini_image.jpg');
   background-size: cover;
   height: 100vh; 
+}
+.self-image-bg2{
+  background-image: url('./image1.png');
+  background-size: cover;
+  height: 100vh;  
 }
 .self-full-height{
   height: 100vh;

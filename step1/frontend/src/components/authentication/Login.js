@@ -11,7 +11,7 @@ export default function Login(){
   let url=main_url+'login'
   const dispatch = useDispatch()
     let [inputs, setInputs] = useState({});
-    const [showPassword, setShowPassword] = useState(false);
+    
 
       function onchangeHandler(event){
         const name = event.target.name;
@@ -19,22 +19,15 @@ export default function Login(){
         setInputs(values => ({...values, [name]: value}))
       }
      async function onsubmitHandler(e){
-      {/*let  headers= {
-            'Content-Type': 'application/json'
-          }*/}
         e.preventDefault();
         if (!inputs.email || !inputs.password) {
           window.alert('Please enter email and password');
           return;
         }
-        
         let  headers= {
           'Content-Type': 'application/json'
-        }
-
-        
+        }        
         let body=inputs
-       
         let response=await axios.post(url,body,{headers})
         console.log("submitted ",inputs)
         console.log(response)
@@ -57,56 +50,49 @@ export default function Login(){
         }
         
       }
-      const togglePasswordVisibility = () => {
-        setShowPassword((prevShowPassword) => !prevShowPassword);
-      };
-    return (
-        <>
-        <center><h3><b>Login Page</b></h3>
-        {/*<div class="container d-flex justify-content-center">*/}
+    
 
-       
-       
-     
-    <form onSubmit={onsubmitHandler}>
-      
-        <table cellPadding={15} cellSpacing={15}>
-          <tr>
-          <td>
-          <div class="input-group mb-3">
-            <span class="input-group-text" >
-            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
-              <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
-            </svg>
-            </span>
-            <input type="text" name="email" id="email" value={inputs.email} onChange={onchangeHandler} placeholder=''/>
-            
+    return (
+        <div className='container justify-content-center align-items-center d-flex  text-white rounded'>
+        <div className='container bg-secondary justify-content-center align-items-center d-flex  row h-75 p-0' >
+            <div className='col-md-7 h-100  d-flex-col justify-content-center align-items-center' style={{backgroundImage:`url('https://media.istockphoto.com/id/1493013286/photo/businessman-logging-on-to-a-password-protected-website.webp?b=1&s=170667a&w=0&k=20&c=OXsY3B-x8h5ocDWjRXYDrUHVDGCAfRWqEVVyrSlCJe0=')`, backgroundSize:"cover"}}>
+               <h3 className='p-3'>WELCOME to our website</h3> 
+               <p className='p-3'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco  elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ulla</p>
             </div>
-          </td>
-            <td></td>
-          </tr>
-          <tr>
-             <td>
-              <div class="input-group mb-3">
-                <span class="input-group-text">
-              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-eye-slash-fill" viewBox="0 0 16 16">
-                <path d="m10.79 12.912-1.614-1.615a3.5 3.5 0 0 1-4.474-4.474l-2.06-2.06C.938 6.278 0 8 0 8s3 5.5 8 5.5a7 7 0 0 0 2.79-.588M5.21 3.088A7 7 0 0 1 8 2.5c5 0 8 5.5 8 5.5s-.939 1.721-2.641 3.238l-2.062-2.062a3.5 3.5 0 0 0-4.474-4.474z"/>
-                <path d="M5.525 7.646a2.5 2.5 0 0 0 2.829 2.829zm4.95.708-2.829-2.83a2.5 2.5 0 0 1 2.829 2.829zm3.171 6-12-12 .708-.708 12 12z"/>
-              </svg>
-              </span>
-              <input type={showPassword ? "text":"password"} name="password" id="password" value={inputs.password} onChange={onchangeHandler}/>
+            <div className='col-md-5 bg-dark h-100 justify-content-center align-items-center d-flex'>
+            <form onSubmit={onsubmitHandler}>
+            <div className='pb-3'>
+              <center className='pb-3'><h4>Login Form</h4></center>
               </div>
-             </td>
-          </tr>
-        </table>
-        
-        <Link to='/Register'>not registerd?</Link><br/>
-        <input type="submit" value="Submit"  style={{borderRadius:"20px", border:"none", padding:"10px 20px", cursor:"pointer"}}/>
+            <div className='row p-3'>
+              
+              
+                <label className='col-form-label col-sm-3' >email</label>
+                <div className='col-sm-9'>
+                <i className="bi bi-envelope"></i>
+                <input type="text" name="email" id="email" value={inputs.email} onChange={onchangeHandler} placeholder=''className='rounded'/>
+                </div>
+            </div>
+            <div className='row p-3'>
+                <label className='col-sm-3 col-form-label'>password</label>
+                <div className='col-sm-9'>
+                     <input  name="password" id="password" value={inputs.password} onChange={onchangeHandler} className='rounded'/>  
+                </div>
+            </div>
+             <center className='p-3'><Link to='/Register'>not registerd?</Link></center>
+             <center> <input type="submit" value="Submit"  style={{borderRadius:"20px", border:"none", padding:"10px 20px", cursor:"pointer"}}/></center>
+             
+              
+            
+            </form>
+          </div>
+       
+   
+   
+
+
+        </div>
       
-    </form>
-    </center>
-    <span className="password-toggle" onClick={togglePasswordVisibility}>jjj</span>
- 
-        </>
+        </div>
     )
 }
