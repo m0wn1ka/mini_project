@@ -36,11 +36,14 @@ export default function Profile(){
     }
     else{
         return(<>
-        profile data after useEffect<br/>
+        {/* profile data after useEffect<br/>
         name: {profileData.name}
         <br/>
         email: {profileData.email}
-        
+         */}
+         <div className='container h-100 w-100 d-flex justify-content-center align-items-center'>
+            <img src={"https://radham0wn1ka.github.io/assets/img/avatar.jpg"} />
+         </div>
         </>)
         
     }

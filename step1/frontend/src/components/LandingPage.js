@@ -1,3 +1,4 @@
+import {Link} from 'react-router-dom'
 export default function LandingPage() {
 let serviceCardCustom='col-lg-6 border rounded p-3 mb-4 bg-light m-n1 h-75 d-flex align-items-center justify-content-center shadow rounded'
     return (
@@ -16,8 +17,8 @@ let serviceCardCustom='col-lg-6 border rounded p-3 mb-4 bg-light m-n1 h-75 d-fle
             <div className="container h-75 w-100  shadow rounded d-flex flex-column justify-content-center align-items-center">
                         <div className="p-1 mb-4">our services</div>
                         <div className="d-flex justify-content-center p-3 row w-100 m-4">
-                                <div className={serviceCardCustom}><div>practice secure developement</div></div>
-                                <div className={serviceCardCustom}><div>alumini site</div></div>
+                                <div className={serviceCardCustom}><div><Link to='/PracticeChallenges'>practice secure developement</Link></div></div>
+                                <div className={serviceCardCustom}><div><Link to='/AluminiSIte'>alumini site</Link></div></div>
                                 <div className={serviceCardCustom}><div>forum site</div></div>
                                 <div className={serviceCardCustom}><div>todo list  site</div></div>
 

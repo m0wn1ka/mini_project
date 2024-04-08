@@ -5,6 +5,7 @@ import Gauth from "../Gauth/Gauth";
 import Admin from   '../admin/Admin'
 import Profile from "../Profile";
 import Help from "../Help";
+import PracticeChallenges from "../PracticeChallenges";
 import MessageToAdmin from "../admin/MessageToAdmin";
 import About from "../About";
 import Login from '../authentication/Login'
@@ -32,6 +33,7 @@ import '../../App.css'
 import LadningPage from "../LandingPage";
 
 import DeveloperRoutes from  './TasksRoutes/DeveloperRoutes'
+import LandingPage from "../LandingPage";
 export default function Routes1(){
     const location = useLocation();
     const { pathname } = location;
@@ -50,7 +52,7 @@ export default function Routes1(){
           <Route
                             exact
                             path="/"
-                            element={<Home />}
+                            element={<LandingPage />}
                         >
                             
                         </Route>
@@ -202,6 +204,7 @@ export default function Routes1(){
                         >
                             
                         </Route>
+                        <Route path="/PracticeChallenges" element={<PracticeChallenges/>}></Route>
 
 
                         
