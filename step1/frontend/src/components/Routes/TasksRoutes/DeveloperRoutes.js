@@ -5,7 +5,7 @@ import {
 } from "react-router-dom";
 import JwtNone from "../../tasks/tasks/developers/JwtNone";
 import ProtoTypePollution from "../../tasks/tasks/developers/proto_type_pollution/ProtoTypePollution";
-export default function Routes2(){
+export default function DeveloperRoutes(){
     return(<>
     <Routes>
                         <Route

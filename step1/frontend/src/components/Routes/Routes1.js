@@ -1,6 +1,7 @@
 
 import Task1 from "../tasks/Task1";
 import Home from "../Home";
+import Gauth from "../Gauth/Gauth";
 import Admin from   '../admin/Admin'
 import Profile from "../Profile";
 import Help from "../Help";
@@ -28,6 +29,9 @@ import AdminProtectedRoute from './AdminProtectedRoute'
 import { Provider } from 'react-redux'
 import { useEffect, useState } from "react";
 import '../../App.css'
+import LadningPage from "../LandingPage";
+
+import DeveloperRoutes from  './TasksRoutes/DeveloperRoutes'
 export default function Routes1(){
     const location = useLocation();
     const { pathname } = location;
@@ -40,7 +44,7 @@ export default function Routes1(){
           
             <div className=" row  w-100 self-no-padding d-flex innerRoutes  justify-content-center" style={{ height: "100vh" }} >
            
-  
+  <DeveloperRoutes/>
      <Routes2/>
           <Routes>
           <Route
@@ -50,11 +54,20 @@ export default function Routes1(){
                         >
                             
                         </Route>
+                        <Route path="/Landing" element={<LadningPage/>}></Route>
                         
                         <Route
                             exact
                             path="/About"
                             element={<About />}
+                        >
+                            
+                        </Route>
+
+                        <Route
+                            exact
+                            path="/Gauth"
+                            element={<Gauth />}
                         >
                             
                         </Route>

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 export default function Navbar(){
     return(
-        <>
+        <div className="fixed-top">
         <nav class="navbar navbar-expand-lg navbar-light  justify-content-center ">
         <div class="container-fluid">
             <ul class="navbar-nav ">
@@ -61,6 +61,6 @@ export default function Navbar(){
         </div>
         
         </nav>
-        </>
+        </div>
     )
 }
