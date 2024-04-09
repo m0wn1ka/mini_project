@@ -31,7 +31,7 @@ import { Provider } from 'react-redux'
 import { useEffect, useState } from "react";
 import '../../App.css'
 import LadningPage from "../LandingPage";
-
+import DeveloperTasks from "../tasks/tasks/developers/DeveloperTasks";
 import DeveloperRoutes from  './TasksRoutes/DeveloperRoutes'
 import LandingPage from "../LandingPage";
 export default function Routes1(){
@@ -49,6 +49,7 @@ export default function Routes1(){
   <DeveloperRoutes/>
      <Routes2/>
           <Routes>
+            <Route path='/DeveloperTasks' element={<DeveloperTasks/>}></Route>
           <Route
                             exact
                             path="/"

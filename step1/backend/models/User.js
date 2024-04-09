@@ -14,7 +14,17 @@ const UserSchema = new mongoose.Schema({
         type:String,
         required:true
     },
-    following:[]//mails this user follows
+    following:{
+        type:[String],
+        default:["test1"]//mails thisd user follows,
+    }
+    ,
+    solved_status:
+    {
+        type:[String],
+        default:["test1"]
+    }
+
     
 });
 
