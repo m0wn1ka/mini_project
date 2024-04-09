@@ -59,6 +59,8 @@ alert(res);
        
         let body={"email":"email2","name":"name2","passowrd":"pass2"}
         body=inputs
+        console.log("body beofre registraion is ",body)
+        
         let response=await axios.post(url,body,{headers})
         if(response.status==205){
           window.alert("usr alerdy register,please login")
@@ -112,6 +114,12 @@ alert(res);
               <label className='col-sm-3 col-form-label'>password</label>
               <div className='col-sm-9'>
                    <input  name="password" id="password" value={inputs.password} onChange={onchangeHandler} className='rounded'/>  
+              </div>
+          </div>
+          <div className='row p-3'>
+              <label className='col-sm-3 col-form-label'>image url</label>
+              <div className='col-sm-9'>
+                   <input  name="image_url" id="image_url" value={inputs.image_url} onChange={onchangeHandler} className='rounded'/>  
               </div>
           </div>
 

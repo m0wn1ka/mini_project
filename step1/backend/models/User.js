@@ -14,6 +14,9 @@ const UserSchema = new mongoose.Schema({
         type:String,
         required:true
     },
+    image_url:{
+        type:String
+    },
     following:{
         type:[String],
         default:["test1"]//mails thisd user follows,

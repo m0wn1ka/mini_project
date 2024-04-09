@@ -11,7 +11,7 @@ router.post('/',async(req,res)=>{
     if(already_exist!=null){
         return res.status(205).send("usr already exist")
     }
-    const user1=new  User({_id:objectId,email:req.body.email,name:req.body.name,password:req.body.password})
+    const user1=new  User({_id:objectId,email:req.body.email,name:req.body.name,password:req.body.password,image_url:req.body.image_url})
     await user1.save()
     res.send("hi");
         }
