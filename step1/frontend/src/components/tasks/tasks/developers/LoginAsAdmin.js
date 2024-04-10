@@ -26,6 +26,7 @@ export default function LoginAsAdmin(){
       }
       catch(e){
         console.log("err is ",e)
+        window.alert("tyr agian")
       }
 
     }

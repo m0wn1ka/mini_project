@@ -12,9 +12,10 @@ router.post("/",auth_middle_ware,async (req,res)=>{
     console.log("req.body" ,req.body)
     if(req.body.solution==answers[req.body.task_name]){
         const user1=await  User.findOne({email:req.user_mail},{password:0})
-        // console.log("sovled stauts i ",user1.solved_status)
+        // console.dsdlog("sovled stauts i ",user1.solved_status)
         console.log("usr1 solved _Status list ",user1.solved_status,"req.body task is ",req.body.task_name)
         if(user1.solved_status.includes(req.body.task_name)){
+            console.log("u lready soved sent")
             return res.json({"msg":"success congrats but u already solved it"})
         }
         else{
@@ -25,10 +26,12 @@ router.post("/",auth_middle_ware,async (req,res)=>{
             let length=sovled_list.length;
             let score=10*length
             let resp=await User.findOneAndUpdate({email:req.user_mail},{solved_status:sovled_list,score:score})
+            console.log("congrats sent")
             return res.json({"msg":"success points added"})
         }
       
     }
+    console.log("wrong values  yaar sent")
     return res.json({"msg":"wrong value try again"})
 })
 
