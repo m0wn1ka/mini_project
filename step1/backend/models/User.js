@@ -1,3 +1,4 @@
+const { Int32 } = require('mongodb');
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 const UserSchema = new mongoose.Schema({
@@ -15,7 +16,8 @@ const UserSchema = new mongoose.Schema({
         required:true
     },
     image_url:{
-        type:String
+        type:String,
+        default:'https://radham0wn1ka.github.io/assets/img/avatar.jpg'
     },
     following:{
         type:[String],
@@ -26,6 +28,10 @@ const UserSchema = new mongoose.Schema({
     {
         type:[String],
         default:["test1"]
+    }
+    ,score:{
+       type: Number,
+       default:0
     }
 
     

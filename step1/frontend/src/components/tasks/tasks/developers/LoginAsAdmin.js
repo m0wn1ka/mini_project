@@ -33,43 +33,47 @@ export default function LoginAsAdmin(){
   }
     return(
     <div>
-    <div className="container border shadow  d-flex h-50 justify-content-center align-items-center bg-light">
+    <div className="container border shadow   d-flex flex-column h-100 justify-content-center align-items-center bg-light">
+        <b className='mb-4'>Introduction</b>
         <ol>
             <li>It tells about the authentication issues</li>
             <li>it is using express (e)js </li>
         </ol>
 
     </div>
-    <div className="container border shadow d-flex flex-column h-50 justify-content-center align-items-center bg-light">
-    <b>prerequiste</b>: need to have docker installed
-        <pre>docker pull radham0wn1ka1/developer_task1<br/>
-        docker run -dp 127.0.0.1:4001:4001 developer_task1<br/>
-        go to browser at 127.0.0.1:4001</pre>
-        <br/>
-        <b>prerequiste</b>: need to node installed
-        <pre>
-            git clone https://github.com/m0wn1ka/mini_project_tasks.git<br/>
-            cd mini_project_tasks/developers/cookie_admin_b64<br/>
-            node index.js
-        </pre>
+    <div className="container border shadow d-flex flex-column h-100 justify-content-center align-items-center bg-light">
+    <b>using docker (prefereed)</b>
+    <ol>
+        <li>docker pull radham0wn1ka1/developer_task1</li>
+        <li>docker run -dp 127.0.0.1:4001:4001 developer_task1</li>
+        <li>go to browser at 127.0.0.1:4001</li>
+    </ol>
+        
+        <b>using source code</b>
+        <ol>
+           <li>git clone https://github.com/m0wn1ka/mini_project_tasks.git</li> 
+          <li> cd mini_project_tasks/developers/cookie_admin_b64</li> 
+           <li>node index.js</li> 
+            </ol>
 
     </div>
 
-    <div className="container border shadow d-flex h-50 justify-content-center align-items-center bg-light">
+    <div className="container border shadow d-flex flex-column h-100 justify-content-center align-items-center bg-light">
         solution part
+        {/* <img src='./image/laptop.png'/> */}
 
     </div>
-    <div className="container border shadow d-flex flex-column h-50 justify-content-center align-items-center bg-light">
-        takeaways:<br/>
+    <div className="container border shadow d-flex flex-column h-100 justify-content-center align-items-center bg-light">
+       <b className='mb-5'>takeaways:</b> <br/>
         - implementation of secuity checks just on fronend is not enough<br/>
         - never trust user input
 
     </div>
     
-    <div className="container border shadow d-flex flex-column h-50 justify-content-center align-items-center bg-light">
-       - one can find the flag after loggin in as admin 
-       <form>
-       key: <input type="text" id='scoring' value={solution} onChange={e=>setSolution(e.target.value)}/>
+    <div className="container border shadow d-flex flex-column h-100 justify-content-center align-items-center bg-light">
+      <b className='mb-5'>- one can find the flag after loggin in as admin </b> 
+       <form className='d-flex flex-column'>
+       key: <input type="text" id='scoring' value={solution} onChange={e=>setSolution(e.target.value)} className='mb-2'/>
        <button onClick={scoreHandler}>submit</button>
        </form>
 

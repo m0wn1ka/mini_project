@@ -21,8 +21,10 @@ router.post("/",auth_middle_ware,async (req,res)=>{
             let sovled_list=user1.solved_status
          
             sovled_list.push(req.body.task_name)
-            console.log("just before db saving ",sovled_list)
-            let resp=await User.findOneAndUpdate({email:req.user_mail},{solved_status:sovled_list})
+            console.log("just before db saving ",sovled_list);
+            let length=sovled_list.length;
+            let score=10*length
+            let resp=await User.findOneAndUpdate({email:req.user_mail},{solved_status:sovled_list,score:score})
             return res.json({"msg":"success points added"})
         }
       

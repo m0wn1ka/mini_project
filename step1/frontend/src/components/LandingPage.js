@@ -1,7 +1,9 @@
 import {Link} from 'react-router-dom'
+
 export default function LandingPage() {
-let serviceCardCustom='col-lg-6 border rounded p-3 mb-4 bg-light m-n1 h-75 d-flex align-items-center justify-content-center shadow rounded'
-    return (
+let serviceCardCustom='col-lg-6  p-3 mb-4  m-n1 h-50 d-flex align-items-center justify-content-center '
+let serviceCardCustom2='border rounded bg-light shadow rounded h-100 w-100 m-3 d-flex flex-column justify-content-center align-items-center'
+return (
         <div >
             <div className="container h-50 w-100  m-4 shadow  d-flex justify-content-center align-items-center" >
                         <div className="btn btn-secondary">let us get started</div>
@@ -14,18 +16,25 @@ let serviceCardCustom='col-lg-6 border rounded p-3 mb-4 bg-light m-n1 h-75 d-fle
                         </div>
                         <div className="btn btn-secondary rounded"> Read More</div>
             </div>
-            <div className="container h-75 w-100  shadow rounded d-flex flex-column justify-content-center align-items-center">
-                        <div className="p-1 mb-4">our services</div>
+            <div className="container h-50 w-100   d-flex flex-column justify-content-center align-items-center">
+                        <div className="p-1 mb-4"><b>Our Services</b></div>
                         <div className="d-flex justify-content-center p-3 row w-100 m-4">
-                                <div className={serviceCardCustom}><div><Link to='/PracticeChallenges'>practice secure developement</Link></div></div>
-                                <div className={serviceCardCustom}><div><Link to='/AluminiSIte'>alumini site</Link></div></div>
-                                <div className={serviceCardCustom}><div>forum site</div></div>
-                                <div className={serviceCardCustom}><div>todo list  site</div></div>
+                                <div className={serviceCardCustom}><div className={serviceCardCustom2}>
+                                    <img src='./images/home_page.png' height={100} width={100}/>   
+                                    <Link to='/PracticeChallenges'>practice secure developement</Link></div>
+                                </div>
+                                <div className={serviceCardCustom}><div className={serviceCardCustom2} >
+                                    <img src='./images/computer_man.png'  height={100} width={100}/>
+                                    <Link to='/AluminiSIte'>alumini site</Link></div></div>
+                                <div className={serviceCardCustom}><div className={serviceCardCustom2} >
+                                    <img src='./images/man_clock.png' height={100} width={100}/>
+                                    forum site</div></div>
+                                <div className={serviceCardCustom}><div className={serviceCardCustom2} >todo list  site</div></div>
 
                         </div>
-                        <div className="btn btn-secondary rounded m-4"> Read More</div>
+                        {/* <div className="btn btn-secondary rounded m-4"> Read More</div> */}
             </div>
-            <div className="container h-50 shadow rounded d-flex flex-column justify-content-center align-items-center">
+            <div className="container h-50 shadow rounded d-flex flex-column justify-content-center align-items-center mb-4">
                     <div className="row m-3">Contact Us</div>
                     <div className="row fixed-left shadow"> Email</div>
                     <input className='row bg-secondary w-75 rounded shadow' type="email"/>

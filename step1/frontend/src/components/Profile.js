@@ -1,9 +1,10 @@
 import {useEffect, useState} from 'react'
 import axios from 'axios'
+
 import { useSelector, useDispatch } from 'react-redux'
 export default function Profile(){
     const main_url=useSelector((state)=>state.auth.url)
-    let [profileData,setProfileData]=useState({"name":'sample name',"email":"sample mail","solved_status":[],"image_url":""})
+    let [profileData,setProfileData]=useState({"name":'sample name',"email":"sample mail","solved_status":[],"image_url":"","score":0})
     const [isLoaded,setIsLoaded]=useState(false)
     const cookie=localStorage.getItem("user")
     let solved_status_result=''
@@ -22,7 +23,8 @@ export default function Profile(){
             "name":res.data.user1.name,
             "email":res.data.user1.email,
             "solved_status":res.data.user1.solved_status,
-            "image_url":res.data.user1.image_url
+            "image_url":res.data.user1.image_url,
+            "score":res.data.user1.score
        })
        console.log("prfile url is ",profileData.image_url)
 
@@ -63,7 +65,7 @@ export default function Profile(){
                 </div>
                 <div className='row mb-3'>
                         <div className='col-md-6'>score</div>
-                        <div className='col-md-6'>1289</div>
+                        <div className='col-md-6'>{profileData.score}</div>
                 </div>
                 <div className='row mb-3'>
                         <div className='col-md-6'>badge</div>
@@ -73,6 +75,7 @@ export default function Profile(){
                         <div className='col-md-6'>solve-stat</div>
                         <div className='col-md-6'>{profileData.solved_status}</div>
                 </div>
+
             
             </div>
             
